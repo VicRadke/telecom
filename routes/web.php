@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\PrestadoresController;
 use App\Http\Controllers\SolicitudController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmpleadoController;
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/prestadores', function () {
+    return view('prestadores');
 });
 
 Route::get('/catalogos', function () {
