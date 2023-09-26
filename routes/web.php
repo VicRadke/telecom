@@ -4,6 +4,8 @@ use App\Http\Controllers\SolicitudController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmpleadoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GendeofController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,10 @@ Route::get('/', function () {
 
 Route::get('/prestadores', function () {
     return view('prestadores');
+});
+
+Route::get('/gendeof', function () {
+    return view('gendeof');
 });
 
 Route::get('/catalogos', function () {
