@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\SolicitudController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmpleadoController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +22,13 @@ Route::get('/', function () {
 Route::get('/catalogos', function () {
     return view('catalogos');
 });
+
+Route::get('/solicitudes', function () {
+    return view('Solicitud');
+});
+
+//Route::get('/solicitudes', [SolicitudController::class, 'index']);
+
 Route::get('/empleados', [EmpleadoController::class, 'index']);
 
 Route::get('/dashboard', function () {
