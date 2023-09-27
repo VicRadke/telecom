@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmpleadoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GendeofController;
+use App\Http\Controllers\GendecreController;
 
 
 /*
@@ -28,6 +29,10 @@ Route::get('/prestadores', function () {
 
 Route::get('/gendeof', function () {
     return view('gendeof');
+});
+
+Route::get('/gendecre', function () {
+    return view('gendecre');
 });
 
 Route::get('/catalogos', function () {
