@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GendeofController;
 use App\Http\Controllers\GendecreController;
 use App\Http\Controllers\HorasController;
+use App\Http\Controllers\ReportesController;
 
 
 /*
@@ -27,6 +28,10 @@ Route::get('/', function () {
 
 Route::get('/prestadores', function () {
     return view('prestadores');
+});
+
+Route::get('/reportes', function () {
+    return view('reportes');
 });
 
 Route::get('/horas', function () {
