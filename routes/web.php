@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\PrestadoresController;
 use App\Http\Controllers\SolicitudController;
 use App\Http\Controllers\ProfileController;
@@ -6,6 +7,7 @@ use App\Http\Controllers\EmpleadoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GendeofController;
 use App\Http\Controllers\GendecreController;
+use App\Http\Controllers\HorasController;
 
 
 /*
@@ -25,6 +27,10 @@ Route::get('/', function () {
 
 Route::get('/prestadores', function () {
     return view('prestadores');
+});
+
+Route::get('/horas', function () {
+    return view('horas');
 });
 
 Route::get('/gendeof', function () {
