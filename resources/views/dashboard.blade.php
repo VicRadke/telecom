@@ -4,12 +4,7 @@
             {{ __('Dashboard') }}
         </h2>
         <div style="display: flex; justify-content: center;">
-        <button style="border: 2px solid black;">Botón 1</button>
-        <button style="border: 2px solid black;">Botón 2</button>
-        <button style="border: 2px solid black;">Botón 3</button>
-        <button style="border: 2px solid black;">Botón 4</button>
-        <button style="border: 2px solid black;">Botón 5</button>
-
+        
     </div>
     </x-slot>
 
@@ -18,6 +13,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
+                    <body>
                 </div>
             </div>
         </div>

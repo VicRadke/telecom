@@ -9,7 +9,7 @@ use App\Http\Controllers\GendeofController;
 use App\Http\Controllers\GendecreController;
 use App\Http\Controllers\HorasController;
 use App\Http\Controllers\ReportesController;
-
+use App\Http\Controllers\AupagoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +28,10 @@ Route::get('/', function () {
 
 Route::get('/prestadores', function () {
     return view('prestadores');
+});
+
+Route::get('/aupago', function () {
+    return view('aupago');
 });
 
 Route::get('/reportes', function () {
