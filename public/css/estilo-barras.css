@@ -1,0 +1,93 @@
+.bg-barra,.bg-logo{
+    background: linear-gradient(to right , #fcfeff, #fad7a1);overflow-x: hidden;
+}
+#barra-arriba{
+    /* background-color: purple; */
+    background: linear-gradient(to bottom , #fcfeff, #fad7a1);
+    height: max-content;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    position: sticky;
+    top: 0;
+    z-index: -99;
+}
+.elementos-barra{
+  /* background-color: red; */
+  display: block;
+  flex: 1;
+  width: fit-content;
+  height: fit-content;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+}
+#logo{
+  text-align: center;
+}
+#logoimg{
+  width: 30%;
+}
+#fecha-hoy{
+    text-align: right;
+}
+.vertical-nav {
+    min-width: 20rem;
+    width: 20rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+  }
+  
+  .page-content {
+    width: calc(100% - 20rem);
+    margin-left: 20rem;
+    transition: all 0.4s;
+   
+  }
+  
+  /* for toggle behavior */
+  #sidebar.active {
+    margin-left: -20rem;
+  }
+  #content.active, #barra-arriba.active{
+    width: 100%;
+    margin: 0;
+  }
+  @media (max-width: 100%) {
+    #sidebar {
+      margin-left: -20rem;
+    }
+    #sidebar.active {
+      margin-left: 0;
+    }
+    #content {
+      width: 100%;
+      margin: 0;
+    }
+    #content.active {
+      margin-left: 20rem;
+      width: calc(100% - 20rem);
+    }
+    #barra-arriba,#boton{
+        width: 90%;
+        margin: 0;
+    }
+    #barra-arriba.active,#boton.active{
+        margin-left: 20rem;
+      width: calc(80% - 20rem);
+    }
+  }
+  #contenedor-nav{
+    background-color: transparent;
+}
+
+  .navbar{
+    background-color: goldenrod;
+    height: 7rem;
+    align-items: center;
+    display: flex;
+
+}

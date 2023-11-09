@@ -1,0 +1,133 @@
+
+#carrusel-caja {
+  -moz-animation: automatizacion 15s infinite linear;
+  -o-animation: automatizacion 15s infinite linear;
+  -webkit-animation: automatizacion 15s infinite linear;
+  animation: automatizacion 15s infinite linear;
+  -webkit-transition: all 0.75s ease;
+  -moz-transition: all 0.75s ease;
+  -ms-transition: all 0.75s ease;
+  -o-transition: all 0.75s ease;
+  transition: all 0.75s ease;
+  height: 500px;
+  width: 300%;
+}
+#carrusel-contenido {
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: left;
+}
+.imagenes{
+  height: 500px;
+  width: 100%;
+}
+.carrusel-elemento {
+  float: left;
+  width: 33.333%;
+}
+@-moz-keyframes automatizacion {
+  0% {
+      margin-left: 0;
+  }
+  30% {
+      margin-left: 0;
+  }
+  35% {
+      margin-left: -100%;
+  }
+  65% {
+      margin-left: -100%;
+  }
+  70% {
+      margin-left: -200%;
+  }
+  95% {
+      margin-left: -200%;
+  }
+  100% {
+      margin-left: 0;
+  }
+}
+@-webkit-keyframes automatizacion {
+  0% {
+      margin-left: 0;
+  }
+  30% {
+      margin-left: 0;
+  }
+  35% {
+      margin-left: -100%;
+  }
+  65% {
+      margin-left: -100%;
+  }
+  70% {
+      margin-left: -200%;
+  }
+  95% {
+      margin-left: -200%;
+  }
+  100% {
+      margin-left: 0;
+  }
+}
+@keyframes automatizacion {
+  0% {
+      margin-left: 0;
+  }
+  30% {
+      margin-left: 0;
+  }
+  35% {
+      margin-left: -100%;
+  }
+  65% {
+      margin-left: -100%;
+  }
+  70% {
+      margin-left: -200%;
+  }
+  95% {
+      margin-left: -200%;
+  }
+  100% {
+      margin-left: 0;
+  }
+}
+.contendor-accesos-directos{
+  /* background-color: red; */
+  width: 100%;
+  display: inline-flex;
+}
+
+.accesos-directos{
+  /* background: linear-gradient(to top left , #cea500cc 0%, #d6ac0094 46%, #d9ae025b 100%); */
+  background: -webkit-gradient(linear, left top, right bottom, from(#d6c5a0), to(#fadd6728));
+  display: flex;
+  flex: 1;
+  margin: 0 2rem 2rem 2rem;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.accesos-directos svg, .accesos-directos p{
+  color: #02614b;
+  font-weight: 500;
+  font-size: large;
+}
+
+.accesos-directos {
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.accesos-directos:hover {
+  background: linear-gradient(43deg, #02614b 0%, #02614bb6 46%, #02614b7d 100%);
+
+  transform: translate(10px, -20px);
+}
+
+.accesos-directos:hover svg, .accesos-directos:hover p {
+  color: #ffffff; /* Cambia el color del texto y los elementos SVG */
+}
