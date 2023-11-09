@@ -10,7 +10,6 @@
     width: 80%;
     position: sticky;
     top: 0;
-    z-index: -99;
 }
 .elementos-barra{
   /* background-color: red; */

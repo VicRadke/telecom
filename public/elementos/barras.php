@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="css/estilo.css" />
-<link rel="stylesheet" href="css/estilo-barras.css">
+<link rel="stylesheet" href="/css/estilo.css" />
+<link rel="stylesheet" href="/css/estilo-barras.css">
 <!-- Vertical navbar -->
 <div class="vertical-nav bg-barra" id="sidebar">
     <div class="py-4 px-3 mb-4 bg-logo">
@@ -93,24 +93,20 @@
 
     <ul class="nav flex-column bg-barra mb-5">
         <li class="nav-item">
-        <form action="{{route('logout'}}" method="POST">
-            <button type="submit" class="nav-link text-dark font-italic">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box-arrow-in-right mr-3" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
-                    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                </svg>
-                Cerrar sesión
-            </button>    
-        </form>
-        
+        <a href="#" class="nav-link text-dark font-italic">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box-arrow-in-right mr-3" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+            </svg>
+            Cerrar sesión
+        </a>
         </li>
     </ul>
 </div>
 <!-- fin de la barra vertical navbar -->
 <!-- Toggle button -->
 <div id="barra-arriba" class="page-content">
-    <div id="boton" class="elementos-barra">
-        <button
+    <button
             id="sidebarCollapse"
             type="button"
             class="btn btn-light bg-white rounded-pill shadow-sm px-4 elementos-barra"
@@ -119,8 +115,7 @@
             <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
             </svg>
             <small class="text-uppercase font-weight-bold">Menú</small>
-        </button>
-    </div>
+    </button>
     <div class="elementos-barra m-0 p-0" id="logo">
         <a href="#">
             <img src="images/logoicono.png" alt="logo Finabien" id="logoimg">
@@ -132,10 +127,16 @@
 </div> 
 <script src="js/jquery-3.3.1.slim.min.js"></script>
 <script>
-  $(function () {
-    // Sidebar toggle behavior
-    $("#sidebarCollapse").on("click", function () {
-      $("#sidebar, #content, #barra-arriba,#boton").toggleClass("active");
+    $( document ).ready(function() {
+        console.log( "ready!" );
+        console.log("hola2")
+        // Sidebar toggle behavior
+        $("#sidebarCollapse").on("click", function () {
+            console.log('hola');
+            $("#sidebar, #content, #barra-arriba,#boton").toggleClass("active");
+        });
     });
+  $(function () {
+    
   });
 </script>
