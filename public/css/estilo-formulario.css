@@ -31,7 +31,7 @@
 .form :where(.input-box input, .select-box) {
   position: relative;
   height: 35px;
-  width: 50%;
+  width: 100%;
   outline: none;
   font-size: 1rem;
   color: #808080;
@@ -40,7 +40,6 @@
   border-radius: 6px;
   padding: 0 15px;
   background: #FCEDDA;
-  z-index: 0;
 }
 
 .input-box input:focus {
@@ -109,4 +108,59 @@
 
 .form button:hover {
   background: #EE3E34;
+}
+
+/*la barra de busqueda*/
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  padding: 18px 16px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  font-size: medium;
+}
+
+.input::placeholder {
+  color: transparent;
+}
+
+.input:focus::placeholder {
+  color: rgb(131, 128, 128);
+}
+
+.input:focus,.input:not(:placeholder-shown) {
+  background-color: #fff;
+  border: 1px solid #00522c;
+  width: 290px;
+  cursor: none;
+  padding: 18px 16px 18px 45px;
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  height: 45px;
+  width: 45px;
+  background-color: #fff;
+  border-radius: 99px;
+  z-index: -1;
+  fill: #00522c;
+  border: 1px solid #00522c;
+}
+
+.input:focus + .icon,.input:not(:placeholder-shown) + .icon {
+  z-index: 0;
+  background-color: transparent;
+  border: none;
 }

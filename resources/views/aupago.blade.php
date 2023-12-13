@@ -1,63 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autorizacion de pago</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 20px auto;
-        }
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/estilo-.css">
+        <title>Autorizacion de pago</title>
+    </head>
+    <body>
+        <?php
+        include("elementos/barras.php");
+        ?>
+        <!-- este es el padre de los div -->
+        <div class="page-content pt-3 px-5" id="content">           
+            <!-- contenedor de los elementos -->                
+            <div class="contenedor">     
+            <h1 class="text-green font-weight-bold text-uppercase">Autorizacion de pago</h1>
+            </div>  
 
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .btn-aceptar, .btn-declinar {
-            padding: 5px 10px;
-            background-color: #4CAF50; /* Verde para aceptar */
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-declinar {
-            background-color: #f44336; /* Rojo para declinar */
-        }
-    </style>
-</head>
-<body>
-    <h1>Autorizacion
-    </h1>
-    <table>
-        <tr>
-            <th>Nombre</th>
-            <th>Aceptar</th>
-            <th>Declinar</th>
-        </tr>
-        <tr>
-            <td>Nombre 1</td>
-            <td><button class="btn-aceptar">Aceptar</button></td>
-            <td><button class="btn-declinar">Declinar</button></td>
-        </tr>
-        <tr>
-            <td>Nombre 2</td>
-            <td><button class="btn-aceptar">Aceptar</button></td>
-            <td><button class="btn-declinar">Declinar</button></td>
-        </tr>
-        <tr>
-            <td>Nombre 3</td>
-            <td><button class="btn-aceptar">Aceptar</button></td>
-            <td><button class="btn-declinar">Declinar</button></td>
-        </tr>
-    </table>
-</body>
+            <!-- aqui podrias poner el footer         -->
+            <div>piee</div>
+        </div>
+    </body>
 </html>
+<script src="js/fecha.js"></script>

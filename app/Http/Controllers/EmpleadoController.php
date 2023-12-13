@@ -10,14 +10,14 @@ class EmpleadoController extends Controller
     /**
      * Display a listing of the resource.
      */
-     public function index()
-    {
-        return view('empleado.index')
-            ->with([
-                'empleados' => Empleado::paginate(5)
-            ]);
+       public function index()
+        {
+            return view('empleado.index')
+                ->with([
+                    'empleados' => Empleado::paginate(5)
+                ]);
 
-    }
+        }
 
     /**
      * Show the form for creating a new resource.

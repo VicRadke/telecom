@@ -10,6 +10,9 @@ use App\Http\Controllers\GendecreController;
 use App\Http\Controllers\HorasController;
 use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\AupagoController;
+use App\Http\Controllers\CatalogoController;
+use App\Http\Controllers\GeneradorController;
+use App\Http\Controllers\ImpresionPDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +24,12 @@ use App\Http\Controllers\AupagoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::name('imprimir')->get('/imprimir', [ImpresionPDFController::class, 'imprimir']);
+ 
 
 Route::get('/', function () {
     return view('welcome');
+    #return dump(config("database"));
 });
 
 Route::get('/prestadores', function () {
@@ -50,17 +56,15 @@ Route::get('/gendecre', function () {
     return view('gendecre');
 });
 
-Route::get('/catalogos', function () {
-    return view('catalogos');
-});
+Route::get('/catalogos', [CatalogoController::class, 'index'])->name('catalogo.index');
 
-Route::get('/solicitudes', function () {
-    return view('Solicitud');
-});
+ Route::get('/solicitudes', [SolicitudController::class, 'index'])->name('solicitud.index');
+
+// Route::get('/solicitudes', [SolicitudController::class, 'index'])->name('solicitud.index');
 
 //Route::get('/solicitudes', [SolicitudController::class, 'index']);
 
-Route::get('/empleados', [EmpleadoController::class, 'index']);
+Route::get('/empleados', [EmpleadoController::class, 'index'])->name('empleado.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
