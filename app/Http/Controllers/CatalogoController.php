@@ -11,7 +11,9 @@ class CatalogoController extends Controller
 
 {
     public function index(){
-        return 'index';
+        return view('catalogos');
+
+        
     }
     
 }
