@@ -52,21 +52,21 @@
             </div>
 
 
-                   
             <div class="column" id="div1" style="display: none;">
                 <h1 class="text-green font-weight-bold text-uppercase">Solicitud de Servicio Social y Prácticas Profesionales</h1>
                 <form class="form" action="#">
+                    @csrf
                     <div class="input-box">
                         <label> Nombre (s)</label>
-                        <input required="" placeholder="Escribe el nombre completo" type="text">
+                        <input required placeholder="Escribe el nombre completo" type="text">
                     </div>
                     <div class="input-box">
                         <label> Apellido Paterno</label>
-                        <input required="" placeholder="Escribe el apellido paterno" type="text">
+                        <input required placeholder="Escribe el apellido paterno" type="text">
                     </div>
                     <div class="input-box">
                         <label> Apellido Materno</label>
-                        <input required="" placeholder="Escribe el apellido " type="text">
+                        <input required placeholder="Escribe el apellido " type="text">
                     </div>
 
                     <div class="input-box address">
@@ -81,18 +81,18 @@
                                     <option>Control</option>
                                 </select>
                             </div>
-                            <input required="" placeholder="Número de identificador" type="text">
+                            <input required placeholder="Número de identificador" type="text">
                         </div>
                     </div>
 
                     <div class="column">
                         <div class="input-box">
                             <label>Fecha de Nacimiento</label>
-                            <input required="" placeholder="Fecha" type="date">
+                            <input required placeholder="Fecha" type="date">
                         </div>
                         <div class="input-box">
                             <label>Edad</label>
-                            <input required="" placeholder="edad" type="telephone">
+                            <input required placeholder="edad" type="telephone">
                         </div>
                     </div>
 
@@ -125,21 +125,21 @@
                     <div class="column">
                         <div class="input-box">
                             <label>CURP</label>
-                            <input required="" placeholder="CURP" type="text">
+                            <input required placeholder="CURP" type="text">
                         </div>
                         <div class="input-box">
                             <label>RFC</label>
-                            <input required="" placeholder="RFC" type="text">
+                            <input required placeholder="RFC" type="text">
                         </div>
                     </div>
                     <div class="column">
                         <div class="input-box">
                             <label>Lugar de Nacimiento</label>
-                            <input required="" placeholder="Lugar de Nacimiento" type="text">
+                            <input required placeholder="Lugar de Nacimiento" type="text">
                         </div>
                         <div class="input-box">
                             <label>Nacionalidad</label>
-                            <input required="" placeholder="Nacionalidad" type="text">
+                            <input required placeholder="Nacionalidad" type="text">
                         </div>
                     </div>
                     <br>
@@ -148,16 +148,16 @@
                         <div class="column">
                             <div class="input-box">
                                 <label>Calle</label>
-                                <input required="" placeholder="Lugar de Nacimiento" type="text">
+                                <input required placeholder="Lugar de Nacimiento" type="text">
                             </div>
 
                             <div class="input-box">
                                 <label>Número Exterior</label>
-                                <input required="" placeholder="Número Exterior" type="text">
+                                <input required placeholder="Número Exterior" type="text">
                             </div>
                             <div class="input-box">
                                 <label>Número Interior</label>
-                                <input required="" placeholder="Número Interio" type="text">
+                                <input required placeholder="Número Interio" type="text">
                             </div>
                         </div>
                     </div>
@@ -165,11 +165,11 @@
                     <div class="column">
                         <div class="input-box">
                             <label>Colonia</label>
-                            <input required="" placeholder="Colonia" type="text">
+                            <input required placeholder="Colonia" type="text">
                         </div>
                         <div class="input-box">
                             <label>Código Postal</label>
-                            <input required="" placeholder="Nacionalidad" type="text">
+                            <input required placeholder="Nacionalidad" type="text">
                         </div>
                     </div>
 
@@ -184,7 +184,7 @@
                         </div>
                         <div class="input-box">
                             <label>Alcaldía/Municipio</label>
-                            <input required="" placeholder="Alcaldía/Municipio" type="text">
+                            <input required placeholder="Alcaldía/Municipio" type="text">
                         </div>
                     </div>
                     <br>
@@ -226,7 +226,7 @@
                         </div>
                         <div class="input-box">
                             <label>Específica</label>
-                            <input required="" placeholder="Específica" type="text">
+                            <input required placeholder="Específica" type="text">
                         </div>
                     </div>
 
@@ -243,7 +243,7 @@
                         </div>
                         <div class="input-box">
                             <label>Específica</label>
-                            <input required="" placeholder="Específica" type="text">
+                            <input required placeholder="Específica" type="text">
                         </div>
                     </div>
 
@@ -260,7 +260,7 @@
                         </div>
                         <div class="input-box">
                             <label>¿Cuál?</label>
-                            <input required="" placeholder="Específica" type="text">
+                            <input required placeholder="Específica" type="text">
                         </div>
                     </div>
                     <br>
@@ -269,15 +269,15 @@
                         <div class="column">
                             <div class="input-box">
                                 <label>Teléfono</label>
-                                <input required="" placeholder="Teléfono" type="telephone">
+                                <input required placeholder="Teléfono" type="telephone">
                             </div>
                             <div class="input-box">
                                 <label>Celular</label>
-                                <input required="" placeholder="Celular" type="telephone">
+                                <input required placeholder="Celular" type="telephone">
                             </div>
                             <div class="input-box">
                                 <label>Correo Electrónico</label>
-                                <input required="" placeholder="Correo Electrónico" type="email">
+                                <input required placeholder="Correo Electrónico" type="email">
                             </div>
                         </div>
                     </div>
@@ -287,15 +287,15 @@
                         <div class="column">
                             <div class="input-box">
                                 <label>Nombre del Padre</label>
-                                <input required="" placeholder="Nombre del Padre" type="text">
+                                <input required placeholder="Nombre del Padre" type="text">
                             </div>
                             <div class="input-box">
                                 <label>Domicilio</label>
-                                <input required="" placeholder="Domicilio" type="text">
+                                <input required placeholder="Domicilio" type="text">
                             </div>
                             <div class="input-box">
                                 <label>Teléfono</label>
-                                <input required="" placeholder="Teléfono" type="telephone">
+                                <input required placeholder="Teléfono" type="telephone">
                             </div>
                         </div>
                     </div>
@@ -304,15 +304,15 @@
                         <div class="column">
                             <div class="input-box">
                                 <label>Nombre de la Madre </label>
-                                <input required="" placeholder="Nombre del Padre" type="text">
+                                <input required placeholder="Nombre del Padre" type="text">
                             </div>
                             <div class="input-box">
                                 <label>Domicilio</label>
-                                <input required="" placeholder="Domicilio" type="text">
+                                <input required placeholder="Domicilio" type="text">
                             </div>
                             <div class="input-box">
                                 <label>Teléfono</label>
-                                <input required="" placeholder="Teléfono" type="telephone">
+                                <input required placeholder="Teléfono" type="telephone">
                             </div>
                         </div>
                     </div>
@@ -320,15 +320,15 @@
                         <div class="column">
                             <div class="input-box">
                                 <label>Esposa</label>
-                                <input required="" placeholder="Nombre del Padre" type="text">
+                                <input required placeholder="Nombre del Padre" type="text">
                             </div>
                             <div class="input-box">
                                 <label>Domicilio</label>
-                                <input required="" placeholder="Domicilio" type="text">
+                                <input required placeholder="Domicilio" type="text">
                             </div>
                             <div class="input-box">
                                 <label>Teléfono</label>
-                                <input required="" placeholder="Teléfono" type="telephone">
+                                <input required placeholder="Teléfono" type="telephone">
                             </div>
                         </div>
                     </div>
@@ -337,23 +337,23 @@
                         <p style="text-align:center"> EN CASO DE EMERGENCIA CONTACTAR A:</p>
                         <div class="input-box">
                             <label> Nombre Completo</label>
-                            <input required="" placeholder="Escribe el nombre completo" type="text">
+                            <input required placeholder="Escribe el nombre completo" type="text">
                         </div>
                     </div>
 
                     <div class="input-box address">
                         <div class="input-box">
                             <label>Teléfono Fijo</label>
-                            <input required="" placeholder="Teléfono Fijo" type="telephone">
+                            <input required placeholder="Teléfono Fijo" type="telephone">
                         </div>
                         <div class="input-box">
                             <label>Teléfono Móvil</label>
-                            <input required="" placeholder="Teléfono Móvil" type="telephone">
+                            <input required placeholder="Teléfono Móvil" type="telephone">
                         </div>
 
                         <div class="input-box">
                             <label>Teléfono de Oficina o Extensión</label>
-                            <input required="" placeholder="Teléfono de Oficina o Extnsión" type="telephone">
+                            <input required placeholder="Teléfono de Oficina o Extnsión" type="telephone">
                         </div>
                     </div>
 
@@ -376,17 +376,17 @@
                     </div>
                     <div class="input-box">
                         <label>Institución</label>
-                        <input required="" placeholder="Institución" type="text">
+                        <input required placeholder="Institución" type="text">
                     </div>
 
                     <div class="input-box">
                         <label>Carrera</label>
-                        <input required="" placeholder="Carrera" type="text">
+                        <input required placeholder="Carrera" type="text">
                     </div>
 
                 <div class="input-box">
                     <label>Periodo</label>
-                    <input required="" placeholder="Periodo" type="text">
+                    <input required placeholder="Periodo" type="text">
                 </div>
 
                 <br>
@@ -397,15 +397,15 @@
                     <div class="column">
                         <div class="input-box">
                             <label>Nombre Completo</label>
-                            <input required="" placeholder="Nombre Completo" type="text">
+                            <input required placeholder="Nombre Completo" type="text">
                         </div>
                         <div class="input-box">
                             <label>Dirección</label>
-                            <input required="" placeholder="Dirección" type="text">
+                            <input required placeholder="Dirección" type="text">
                         </div>
                         <div class="input-box">
                             <label>Teléfono</label>
-                            <input required="" placeholder="Teléfono" type="telephone">
+                            <input required placeholder="Teléfono" type="telephone">
                         </div>
                     </div>
                 </div>
@@ -414,15 +414,15 @@
                     <div class="column">
                         <div class="input-box">
                             <label>Nombre Completo</label>
-                            <input required="" placeholder="Nombre Completo" type="text">
+                            <input required placeholder="Nombre Completo" type="text">
                         </div>
                         <div class="input-box">
                             <label>Dirección</label>
-                            <input required="" placeholder="Dirección" type="text">
+                            <input required placeholder="Dirección" type="text">
                         </div>
                         <div class="input-box">
                             <label>Teléfono</label>
-                            <input required="" placeholder="Teléfono" type="telephone">
+                            <input required placeholder="Teléfono" type="telephone">
                         </div>
                     </div>
                 </div>

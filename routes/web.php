@@ -25,7 +25,6 @@ use App\Http\Controllers\ImpresionPDFController;
 |
 */
 Route::name('imprimir')->get('/imprimir', [ImpresionPDFController::class, 'imprimir']);
- 
 
 Route::get('/', function () {
     return view('welcome');
@@ -63,6 +62,9 @@ Route::get('/catalogos', [CatalogoController::class, 'index'])->name('catalogo.i
 // Route::get('/solicitudes', [SolicitudController::class, 'index'])->name('solicitud.index');
 
 //Route::get('/solicitudes', [SolicitudController::class, 'index']);
+
+// Ruta para crear la solicitud de servicio social y practicas profesionales
+Route::get('/solicitudes/create', [SolicitudController::class, 'create'])->name('solicitud.create');
 
 Route::get('/empleados', [EmpleadoController::class, 'index'])->name('empleado.index');
 
