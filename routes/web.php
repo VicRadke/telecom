@@ -64,7 +64,7 @@ Route::get('/catalogos', [CatalogoController::class, 'index'])->name('catalogo.i
 //Route::get('/solicitudes', [SolicitudController::class, 'index']);
 
 // Ruta para crear la solicitud de servicio social y practicas profesionales
-Route::get('/solicitudes/create', [SolicitudController::class, 'create'])->name('solicitud.create');
+Route::post('/solicitudes/create', [SolicitudController::class, 'store'])->name('solicitud.store');
 
 Route::get('/empleados', [EmpleadoController::class, 'index'])->name('empleado.index');
 

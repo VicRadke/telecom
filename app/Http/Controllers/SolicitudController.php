@@ -15,7 +15,7 @@ class SolicitudController extends Controller {
     }
 
 
-    public function create(Request $request) {
+    public function store(Request $request) {
         $this->validate($request, [
             'nombre' => 'required',
             'apellido_paterno' => 'required',
@@ -41,11 +41,11 @@ class SolicitudController extends Controller {
             'modalidad' => 'required',
             'turno' => 'required',
             'es_migrante' => 'required',
-            'especifica_migrante' => 'optional',
+            //'especifica_migrante' => 'optional',
             'es_afrodescendiente' => 'required',
-            'especifica_afrodescendiente' => 'optional',
+            //'especifica_afrodescendiente' => 'optional',
             'es_lengua_indigena' => 'required',
-            'especifica_lengua_indigena' => 'optional',
+            //'especifica_lengua_indigena' => 'optional',
             // contacto
             'telefono' => 'required',
             'celular' => 'required',
@@ -59,9 +59,8 @@ class SolicitudController extends Controller {
             'domicilio_conyuge' => 'required',
             // contacto de emergencia
             'nombre_contacto_emergencia' => 'required',
-            'telefono_contacto_emergencia' => 'optional',
-            'telefono_celular_contacto_emergencia' => 'optional',
-            'telefono_otro_contacto_emergencia' => 'optional',
+            //'telefono_celular_contacto_emergencia' => 'optional',
+            //'telefono_otro_contacto_emergencia' => 'optional',
             // informacion academica
             'nivel_academico' => 'required',
             'nombre_institucion' => 'required',
@@ -75,5 +74,6 @@ class SolicitudController extends Controller {
             'direccion_referencia_personal_2' => 'required',
             'telefono_referencia_personal_2' => 'required',
         ]);
+        return 'ok';
     }
 }

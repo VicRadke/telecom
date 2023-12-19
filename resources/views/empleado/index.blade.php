@@ -73,32 +73,32 @@
             <div class="column" id="div1" style="display: none;">
                 <h1 class="text-green font-weight-bold text-uppercase">Solicitud de Servicio Social y Prácticas
                     Profesionales</h1>
-                <form class="form" action="#">
+                <form class="form" method='POST' action="{{route('solicitud.store')}}">
                     @csrf
                     <div class="input-box">
                         <label> Nombre (s)</label>
                         <input required placeholder="Escribe el nombre completo" type="text" name='nombre' value="{{ old('nombre') }}">
                         @error('nombre')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                     </div>
                     <div class="input-box">
                         <label> Apellido Paterno</label>
                         <input required placeholder="Escribe el apellido paterno" type="text" name='apellido_paterno' value="{{ old('apellido_paterno') }}">
-                        @error('apellido paterno')
+                        @error('apellido_paterno')
                         <br>
-                        <small>*{{ message }}</small>
+                        <small>*{{ $message }}</small>
                         </br>
                     @enderror
                     </div>
                     <div class="input-box">
                         <label> Apellido Materno</label>
                         <input required placeholder="Escribe el apellido " type="text" name='apellido_materno' value="{{ old('apellido_materno') }}">
-                        @error('apellido materno')
+                        @error('apellido_materno')
                         <br>
-                        <small>*{{ message }}</small>
+                        <small>*{{ $message }}</small>
                         </br>
                     @enderror
                     </div>
@@ -116,9 +116,9 @@
                                 </select>
                             </div>
                             <input required placeholder="Número de identificador" type="text" name='id_prestador' value="{{ old('id_prestador') }}">
-                            @error('numero de identificador id')
+                            @error('id_prestador')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
@@ -128,9 +128,9 @@
                         <div class="input-box">
                             <label>Fecha de Nacimiento</label>
                             <input required placeholder="Fecha" type="date" name='fecha_nacimiento' value="{{ old('fecha_nacimiento') }}">
-                            @error('fecha de nacimiento')
+                            @error('fecha_nacimiento')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                             @enderror
                         </div>
@@ -139,7 +139,7 @@
                             <input required placeholder="edad" type="telephone" name='edad' value="{{ old('edad') }}">
                             @error('edad')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
@@ -157,7 +157,7 @@
                                 </select>
                                 @error('genero')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -173,9 +173,9 @@
                                     <option>Casado</option>
                                     <option>Otro</option>
                                 </select>
-                                @error('estado civil')
+                                @error('estado_civil')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -184,10 +184,10 @@
                     <div class="column">
                         <div class="input-box">
                             <label>CURP</label>
-                            <input required placeholder="CURP" type="text" nombre='curp' value="{{ old('curp') }}">
+                            <input required placeholder="CURP" type="text" name='curp' value="{{ old('curp') }}">
                             @error('curp')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
@@ -196,7 +196,7 @@
                             <input required placeholder="RFC" type="text" name='rfc' value="{{ old('rfc') }}">
                             @error('rfc')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
@@ -205,9 +205,9 @@
                         <div class="input-box">
                             <label>Lugar de Nacimiento</label>
                             <input required placeholder="Lugar de Nacimiento" type="text" name='lugar_nacimiento' value="{{ old('lugar_nacimiento') }}">
-                            @error('lugar de nacimiento')
+                            @error('lugar_nacimiento')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
@@ -216,7 +216,7 @@
                             <input required placeholder="Nacionalidad" type="text" name='nacionalidad' value="{{ old('nacionalidad') }}">
                             @error('nacionalidad')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
@@ -230,26 +230,26 @@
                                 <input required placeholder="Lugar de Nacimiento" type="text" name='calle' value="{{ old('calle') }}">
                                 @error('calle')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
 
                             <div class="input-box">
                                 <label>Número Exterior</label>
-                                <input required placeholder="Número Exterior" type="text" name='numero_extrerior' value="{{ old('numero_exterior') }}">
-                                @error('numero exterior')
+                                <input required placeholder="Número Exterior" type="text" name='numero_exterior' value="{{ old('numero_exterior') }}">
+                                @error('numero_exterior')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Número Interior</label>
                                 <input required placeholder="Número Interio" type="text" name='numero_interior' value="{{ old('numero_interior') }}">
-                                @error('numero interior')
+                                @error('numero_interior')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -262,16 +262,16 @@
                             <input required placeholder="Colonia" type="text" name='colonia' value="{{ old('colonia') }}">
                             @error('colonia')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
                         <div class="input-box">
                             <label>Código Postal</label>
                             <input required placeholder="Nacionalidad" type="text" name='codigo_postal' value="{{ old('codigo_postal') }}">
-                            @error('codigo postal')
+                            @error('codigo_postal')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
@@ -284,9 +284,9 @@
                                 <select name='entidad_federativa'>
                                     <option>Entidad Federativa</option>
                                 </select>
-                                @error('entidad federativa')
+                                @error('entidad_federativa')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -294,9 +294,9 @@
                         <div class="input-box">
                             <label>Alcaldía/Municipio</label>
                             <input required placeholder="Alcaldía/Municipio" type="text" name='alcaldia_municipio' value="{{ old('alcaldia_municipio') }}">
-                            @error('alcaldia/municipio')
+                            @error('alcaldia_municipio')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
@@ -317,7 +317,7 @@
                                 </select>
                                 @error('modalidad')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -330,7 +330,7 @@
                                 </select>
                                 @error('turno')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -346,9 +346,9 @@
                                     <option>Si</option>
                                     <option>No</option>
                                 </select>
-                                @error('migrante')
+                                @error('es_migrante')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -368,9 +368,9 @@
                                     <option>Si</option>
                                     <option>No</option>
                                 </select>
-                                @error('afrodescendencia')
+                                @error('es_afrodescendencia')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -390,9 +390,9 @@
                                     <option>Si</option>
                                     <option>No</option>
                                 </select>
-                                @error('lengua indigena')
+                                @error('es_lengua_indigena')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -408,23 +408,28 @@
                         <div class="column">
                             <div class="input-box">
                                 <label> fijo</label>
-                                <input required placeholder="Teléfono" type="telephone" name='telefono' value="{{ old('telefno') }}">
+                                <input required placeholder="Teléfono" type="telephone" name='telefono' value="{{ old('telefono') }}">
                                 @error('telefono')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Celular</label>
                                 <input required placeholder="Celular" type="telephone" name='celular' value="{{ old('celular') }}">
+                                @error('celular')
+                                <br>
+                                <small>*{{ $message }}</small>
+                                </br>
+                            @enderror
                             </div>
                             <div class="input-box">
                                 <label>Correo Electrónico</label>
                                 <input required placeholder="Correo Electrónico" type="email" name='correo' value="{{ old('correo') }}">
-                                @error('correo electronico')
+                                @error('correo')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -437,27 +442,27 @@
                             <div class="input-box">
                                 <label>Nombre del Padre</label>
                                 <input required placeholder="Nombre del Padre" type="text" name='nombre_padre' value="{{ old('nombre_padre') }}">
-                                @error('nombre del padre')
+                                @error('nombre_padre')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Domicilio</label>
                                 <input required placeholder="Domicilio" type="text" name='domicilio_padre' value="{{ old('domicilio_padre') }}">
-                                @error('domicilio del padre')
+                                @error('domicilio_padre')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Teléfono</label>
                                 <input required placeholder="Teléfono" type="telephone" name='telefono_padre' value="{{ old('telefono_padre') }}">
-                                @error('telefono del padre')
+                                @error('telefono_padre')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -469,27 +474,27 @@
                             <div class="input-box">
                                 <label>Nombre de la Madre </label>
                                 <input required placeholder="Nombre del Padre" type="text" name='nombre_madre' value="{{ old('nombre_madre') }}">
-                                @error('nombre de la madre')
+                                @error('nombre_madre')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Domicilio</label>
                                 <input required placeholder="Domicilio" type="text" name='domicilio_madre' value="{{ old('domicilio_madre') }}">
-                                @error('domicilio de la madre')
+                                @error('domicilio_madre')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Teléfono</label>
                                 <input required placeholder="Teléfono" type="telephone" name='telefono_madre' value="{{ old('telefono_madre') }}">
-                                @error('telefono de la madre')
+                                @error('telefono_madre')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -500,27 +505,27 @@
                             <div class="input-box">
                                 <label>Esposa</label>
                                 <input required placeholder="Nombre del Padre" type="text" name='nombre_conyuge' value="{{ old('nombre_conyuge') }}">
-                                @error('esposa')
+                                @error('nombre_conyuge')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Domicilio</label>
                                 <input required placeholder="Domicilio" type="text" name='domicilio_conyuge' value="{{ old('domicilio_coyuge') }}">
-                                @error('Domicilio conyuge')
+                                @error('domicilio_conyuge')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Teléfono</label>
                                 <input required placeholder="Teléfono" type="telephone" name='telefono_conyuge' value="{{ old('telefono_conyuge') }}">
-                                @error('telefono conyuge')
+                                @error('telefono_conyuge')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -532,9 +537,9 @@
                         <div class="input-box">
                             <label> Nombre Completo</label>
                             <input required placeholder="Escribe el nombre completo" type="text" name='nombre_contacto_emergencia' value="{{ old('nombre_contacto_emergencia') }}">
-                            @error('Nombre contacto emergencia')
+                            @error('nombre_contacto_emergencia')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
@@ -544,18 +549,18 @@
                         <div class="input-box">
                             <label>Teléfono Fijo</label>
                             <input required placeholder="Teléfono Fijo" type="telephone" name='telefono_contacto_emergencia' value="{{ old('telefono_contacto_emergencia') }}">
-                            @error('telefono fijo contacto emergencia')
+                            @error('telefono_fijo_contacto_emergencia')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
                         <div class="input-box">
                             <label>Teléfono Móvil</label>
                             <input required placeholder="Teléfono Móvil" type="telephone" name='telefono_celular_contacto_emergencia' value="{{ old('telefono_celular_contacto_emergencia') }}">
-                            @error('Celular emergencia')
+                            @error('celular_emergencia')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
@@ -563,9 +568,9 @@
                         <div class="input-box">
                             <label>Teléfono de Oficina o Extensión</label>
                             <input required placeholder="Teléfono de Oficina o Extnsión" type="telephone" name='Telefono_otro_contacto_emergencia' value="{{ old('telefono_otro_contacto_emergencia') }}">
-                            @error('Otro telefono contacto emergencia')
+                            @error('telefono_otro_contacto_emergencia')
                             <br>
-                            <small>*{{ message }}</small>
+                            <small>*{{ $message }}</small>
                             </br>
                         @enderror
                         </div>
@@ -577,7 +582,7 @@
                         <label>NIVEL ACADÉMICO</label>
                         <div class="column">
                             <div class="select-box">
-                                <select name='nivel academico'>
+                                <select name='nivel_academico'>
                                     <option hidden="">Nivel</option>
                                     <option>Bachillerato</option>
                                     <option>Técnico</option>
@@ -585,9 +590,9 @@
                                     <option>T.S.U</option>
                                     <option>Licenciatura</option>
                                 </select>
-                                @error('nivel academico')
+                                @error('nivel_academico')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -595,10 +600,10 @@
                     </div>
                     <div class="input-box">
                         <label>Institución</label>
-                        <input required placeholder="Institución" type="text" name='nombre_insttitucion' value="{{ old('nombre_institucion') }}">
-                        @error('nombre institucion')
+                        <input required placeholder="Institución" type="text" name='nombre_institucion' value="{{ old('nombre_institucion') }}">
+                        @error('nombre_institucion')
                         <br>
-                        <small>*{{ message }}</small>
+                        <small>*{{ $message }}</small>
                         </br>
                     @enderror
                     </div>
@@ -608,7 +613,7 @@
                         <input required placeholder="Carrera" type="text" name='carrera' value="{{ old('carrera') }}">
                         @error('carrera')
                         <br>
-                        <small>*{{ message }}</small>
+                        <small>*{{ $message }}</small>
                         </br>
                     @enderror
                     </div>
@@ -616,9 +621,9 @@
                     <div class="input-box">
                         <label>Periodo</label>
                         <input required placeholder="Periodo" type="text" name='periodo_escolar' value="{{ old('periodo_escolar') }}">
-                        @error('periodo escolar')
+                        @error('periodo_escolar')
                         <br>
-                        <small>*{{ message }}</small>
+                        <small>*{{ $message }}</small>
                         </br>
                     @enderror
                     </div>
@@ -632,27 +637,27 @@
                             <div class="input-box">
                                 <label>Nombre Completo</label>
                                 <input required placeholder="Nombre Completo" type="text" name='nombre_referencia_personal' value="{{ old('nombre_referencia_personal') }}">
-                                @error('nombre referencia personal 1')
+                                @error('nombre_referencia_personal1')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Dirección</label>
                                 <input required placeholder="Dirección" type="text" name='direccion_refencia_personal' value="{{ old('direccion_referencia_personal') }}">
-                                @error('direccion refencia personal 1')
+                                @error('direccion_refencia_personal1')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Teléfono</label>
                                 <input required placeholder="Teléfono" type="telephone" name='telefono_referencia_personal' value="{{ old('telefono_referencia_personal') }}">
-                                @error('telefono refencia personal 1')
+                                @error('telefono_referencia_personal')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
@@ -664,27 +669,27 @@
                             <div class="input-box">
                                 <label>Nombre Completo</label>
                                 <input required placeholder="Nombre Completo" type="text" name='nombre_referencia_personal_2' value="{{ old('nombre_referencia_personal_2') }}">
-                                @error('nombre referencia personal 2')
+                                @error('nombre_referencia_personal_2')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Dirección</label>
                                 <input required placeholder="Dirección" type="text" name= 'direccion_referencia_personal_2' value="{{ old('direccion_referencia_personal_2') }}">
-                                @error('direccion personal 2')
+                                @error('direccion_referencia_personal_2')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
                             <div class="input-box">
                                 <label>Teléfono</label>
                                 <input required placeholder="Teléfono" type="telephone" name='telefono_referencia_personal_2' value="{{ old('telefono_referencia_personal_2') }}">
-                                @error('telefono referencia personal 2')
+                                @error('telefono_referencia_personal_2')
                                 <br>
-                                <small>*{{ message }}</small>
+                                <small>*{{ $message }}</small>
                                 </br>
                             @enderror
                             </div>
