@@ -1,4 +1,13 @@
 <div>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Error al generar solicitud</strong> Favor de verificar los siguientes campos.
+        </div>
+    @endif
+    @dump($errors)
+    @foreach($errors->all() as $error)
+        <p>{{$error}}</p>
+    @endforeach         
     <h1 class="text-green font-weight-bold text-uppercase">Solicitud de Servicio Social y Prácticas
         Profesionales</h1>
     <form class="form" method='POST' action="{{route('solicitud.store')}}">
@@ -291,12 +300,12 @@
             <div class="input-box">
                 <label>Afrodescendencia</label>
                 <div class="select-box">
-                    <select name='es_afrodescendencia'>
+                    <select name='es_afrodescendiente'>
                         <option>Afrodescendencia</option>
                         <option>Si</option>
                         <option>No</option>
                     </select>
-                    @error('es_afrodescendencia')
+                    @error('es_afrodescendiente')
                     <br>
                     <small>*{{ $message }}</small>
                     </br>
@@ -441,8 +450,8 @@
                 </div>
                 <div class="input-box">
                     <label>Domicilio</label>
-                    <input required placeholder="Domicilio" type="text" name='domicilio_conyuge' value="{{ old('domicilio_coyuge') }}">
-                    @error('domicilio_conyuge')
+                    <input required placeholder="Domicilio" type="text" name='domicilio_conyugue' value="{{ old('domicilio_conyugue') }}">
+                    @error('domicilio_conyugue')
                     <br>
                     <small>*{{ $message }}</small>
                     </br>
@@ -495,7 +504,7 @@
 
             <div class="input-box">
                 <label>Teléfono de Oficina o Extensión</label>
-                <input required placeholder="Teléfono de Oficina o Extnsión" type="telephone" name='Telefono_otro_contacto_emergencia' value="{{ old('telefono_otro_contacto_emergencia') }}">
+                <input required placeholder="Teléfono de Oficina o Extnsión" type="telephone" name='telefono_otro_contacto_emergencia' value="{{ old('telefono_otro_contacto_emergencia') }}">
                 @error('telefono_otro_contacto_emergencia')
                 <br>
                 <small>*{{ $message }}</small>
@@ -573,8 +582,8 @@
                 </div>
                 <div class="input-box">
                     <label>Dirección</label>
-                    <input required placeholder="Dirección" type="text" name='direccion_refencia_personal' value="{{ old('direccion_referencia_personal') }}">
-                    @error('direccion_refencia_personal1')
+                    <input required placeholder="Dirección" type="text" name='direccion_referencia_personal' value="{{ old('direccion_referencia_personal') }}">
+                    @error('direccion_referencia_personal')
                     <br>
                     <small>*{{ $message }}</small>
                     </br>

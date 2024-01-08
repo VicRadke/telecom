@@ -58,14 +58,6 @@
                 </div>
             </div>{{-- Fin Sección botones --}}
                 
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <strong>Error al generar solicitud</strong> Favor de verificar los siguientes campos.
-                </div>
-            @endif
-            @foreach($errors as $error)
-                <p>{{$error}}</p>
-            @endforeach     
             
             <x-formulario-solicitud-servicio-social/>
 

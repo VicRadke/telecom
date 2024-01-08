@@ -10,6 +10,10 @@ class FormularioSolicitudServicioSocial extends Component
 {
     /**
      * Create a new component instance.
+     * TODO: especifica de modalidades no debe de ser obligatorio
+     * TODO: Datos de la esposa no deben de ser obligatorios.
+     * TODO: Teléfono de oficina o extensión de emegencia no debe de ser obligatorio.
+    
      */
     public function __construct()
     {

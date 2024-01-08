@@ -56,7 +56,7 @@ class SolicitudController extends Controller {
             'nombre_madre' => 'required',
             'domicilio_madre' => 'required',
             'nombre_conyuge' => 'required',
-            'domicilio_conyuge' => 'required',
+            'domicilio_conyugue' => 'required',
             // contacto de emergencia
             'nombre_contacto_emergencia' => 'required',
             //'telefono_celular_contacto_emergencia' => 'optional',
