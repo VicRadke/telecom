@@ -26,6 +26,14 @@
     transition: background-color 0.5s ease, transform 0.5s ease;
   }
   
+  .accesos-directos-selected{
+    background: linear-gradient(43deg, #02614b 0%, #02614bb6 46%, #02614b7d 100%);
+    transform: translate(10px, -20px);
+  }
+  .accesos-directos-selected svg, .accesos-directos-selected p{
+    color: #ffffff;
+  }
+
   .accesos-directos:hover {
     background: linear-gradient(43deg, #02614b 0%, #02614bb6 46%, #02614b7d 100%);
   

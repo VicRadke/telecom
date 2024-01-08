@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="/css/estilo-index.css">
         <link rel="stylesheet" href="/css/estilo-formulario.css">
         <link rel="stylesheet" href="/css/estilo.css">
+        <link rel="stylesheet" href="/css/estilo-catalogo.css">
         <title>°°°Servicio Social°°°</title>
         @vite('resources/css/app.css')
     </head>
