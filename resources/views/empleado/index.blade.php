@@ -56,9 +56,10 @@
                     </div>
                 </div>
             </div>
-
-
-            <div">
+                
+            @foreach($errors as $error)
+            
+            <div>
                 <h1 class="text-green font-weight-bold text-uppercase">Solicitud de Servicio Social y Prácticas
                     Profesionales</h1>
                 <form class="form" method='POST' action="{{route('solicitud.store')}}">
@@ -68,7 +69,7 @@
                         <input required placeholder="Escribe el nombre completo" type="text" name='nombre' value="{{ old('nombre') }}">
                         @error('nombre')
                             <br>
-                            <small>*{{ $message }}</small>
+                            <small>*{{ $message }}</small>  
                             </br>
                         @enderror
                     </div>
@@ -686,8 +687,13 @@
                     <br>
                     <br>
                     <button>Guardar</button>
+                    <br>
+                    <br>
                 </form>
             </div>
+        
+            @endforeach 
+            
 
             <div id="div2" style="display: none;">
                 <h1 class="text-green font-weight-bold text-uppercase">Modificar</h1>
