@@ -5,16 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/estilo-index.css">
         <title>°°°Servicio Social°°°</title>
+        @vite('resources/css/app.css')
     </head>
     <body>
         <!-- manda a llamar a las barras de menu y a la del encabezado -->
         <x-barra/>
             <!-- este es el padre de los div -->
         <div class="page-content pt-3 px-5" id="content">           
+            @if(session('success'))
+                <div class="bg-green-400 text-center text-black font-bold py-2 px-4 rounded">
+                    {{session('success')}}
+                </div>
+            @endif
             @yield('content')
         </div>
     </body>
 </html>
 <script src="js/fecha.js"></script>
-
- 

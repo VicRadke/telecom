@@ -74,6 +74,8 @@ class SolicitudController extends Controller {
             'direccion_referencia_personal_2' => 'required',
             'telefono_referencia_personal_2' => 'required',
         ]);
-        return 'ok';
+        // TODO: guardar registro en la BD.
+        // TODO: Avisar en el front si fue exitoso o no.
+        return redirect()->route('dashboard')->with('success', 'Solicitud creada exitosamente');
     }
 }

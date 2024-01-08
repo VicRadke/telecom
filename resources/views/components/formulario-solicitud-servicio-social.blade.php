@@ -4,7 +4,6 @@
             <strong>Error al generar solicitud</strong> Favor de verificar los siguientes campos.
         </div>
     @endif
-    @dump($errors)
     @foreach($errors->all() as $error)
         <p>{{$error}}</p>
     @endforeach         
