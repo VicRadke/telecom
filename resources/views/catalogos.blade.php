@@ -301,7 +301,7 @@
                 </div>
             </div>
         </div>
-        <div id="agregar-modalidad" style="display: none;">
+        <div id="agregar-instituciones" style="display: none;">
             <h1 class="text-green font-weight-bold text-uppercase">NUEVA INSTITUCION</h1>
             <form class="form" action="#">
                 <div class="input-box">
@@ -355,10 +355,28 @@
                 <div>
                     <p>CONSULTAR</p>
                 </div>
-            </div>
-
-            
+            </div>  
         </div>
+
+        <div id="agregar-carreras" style="display: none;">
+            <h1 class="text-green font-weight-bold text-uppercase">CARRERAS</h1>
+            <form class="form" action="#">
+                <div class="input-box">
+                    <label>Nombre </label>
+                    <input required="" placeholder="Nombre Completo" type="text">
+                </div>
+
+
+                <br>
+                <button>Guardar Registro</button>
+                <br>
+                <br>
+                <br>
+            </form>
+        </div>
+
+
+        
 
 
     </div>
