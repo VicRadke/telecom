@@ -4,7 +4,7 @@
         <h1 class="text-green font-weight-bold text-uppercase">Cátalogos</h1>
         <br>
         <br>
-        <br>
+        
     </div>
 
     <div class="contendor-accesos-directos">
@@ -172,6 +172,9 @@
             </form>
         </div>
 
+
+        
+
     </div>
 
 
@@ -249,10 +252,8 @@
 
 
 
-
-
-    <div class="mt-5 contendor-accesos-directos">
-        <a href="administrar-prestadores.php" class="accesos-directos pt-3">
+    <div class="contendor-accesos-directos">
+        <div class="accesos-directos pt-3" onclick="actualizaOpciones('div-nivelInstituciones', 'nivelInstituciones')" id="nivelInstituciones">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-buildings" viewBox="0 0 16 16">
                     <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022ZM6 8.694 1 10.36V15h5zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5z" />
@@ -260,18 +261,10 @@
                 </svg>
                 <p>Instituciones</p>
             </div>
-        </a>
+        </div>
 
-        <a href="catalogos.php" class="accesos-directos pt-3">
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
-                    <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72l-.25-1Z" />
-                </svg>
-                <p>Escuelas</p>
-            </div>
-        </a>
 
-        <a href="generacion-de-credencial.php" class="accesos-directos pt-3">
+        <div class="accesos-directos pt-3" onclick="actualizaOpciones('div-nivelCarreras', 'nivelCarreras')" id="nivelCarreras">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-passport" viewBox="0 0 16 16">
                     <path d="M8 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6M6 8a2 2 0 1 1 4 0 2 2 0 0 1-4 0m-.5 4a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z" />
@@ -279,8 +272,99 @@
                 </svg>
                 <p>Carreras</p>
             </div>
-        </a>
+        </div>
     </div>
+
+    <!-- ESTE ES EL PADRE DE LOS BOTONES AGREGAR, ELIMINAR, CONSULTAR Y MODIFICAR, TAMBIEN DE TODOS LOS FORMULARIOS -->
+    <div id="div-nivelInstituciones" style="display: none;" class="sub-buttons">
+        <div class="contendor-accesos-directos">
+            <div class="accesos-directos pt-3" onclick="nivelInstituciones('agregar-instituciones')">
+                <div>
+                    <p>AGREGAR</p>
+                </div>
+            </div>
+
+            <div class="accesos-directos pt-3">
+                <div>
+                    <p>MODIFICAR</p>
+                </div>
+            </div>
+
+            <div class="accesos-directos pt-3">
+                <div>
+                    <p>ELIMINAR</p>
+                </div>
+            </div>
+            <div class="accesos-directos pt-3">
+                <div>
+                    <p>CONSULTAR</p>
+                </div>
+            </div>
+        </div>
+        <div id="agregar-modalidad" style="display: none;">
+            <h1 class="text-green font-weight-bold text-uppercase">NUEVA INSTITUCION</h1>
+            <form class="form" action="#">
+                <div class="input-box">
+                    <label>Nombre</label>
+                    <input required="" placeholder="Nombre" type="text">
+                </div>
+
+                <div class="input-box address">
+                    <label>Escuela</label>
+                    <div class="column">
+                        <div class="select-box">
+                            <select>
+                                <option hidden="">Cetis</option>
+                                <option>nddoik</option>
+                                <option>kdqjiodw</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <button>Guardar Registro</button>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div id="div-nivelCarreras" style="display: none;" class="sub-buttons">
+        <div class="contendor-accesos-directos">
+            <div class="accesos-directos pt-3" onclick="nivelCarreras('agregar-carreras')">
+                <div>
+                    <p>AGREGAR</p>
+                </div>
+            </div>
+
+            <div class="accesos-directos pt-3">
+                <div>
+                    <p>MODIFICAR</p>
+                </div>
+            </div>
+
+            <div class="accesos-directos pt-3">
+                <div>
+                    <p>ELIMINAR</p>
+                </div>
+            </div>
+            <div class="accesos-directos pt-3">
+                <div>
+                    <p>CONSULTAR</p>
+                </div>
+            </div>
+
+            
+        </div>
+
+
+    </div>
+    
+        
+    
     <script src="/js/fecha.js"></script>
     <script src="/js/formulariomodalidad.js"></script>   
 @endsection

@@ -79,3 +79,23 @@ function nivelInstituciones(id){
     x.style.display = "none";
   }
 }
+
+
+/*BOTON DE CARRERAS*/
+function mostrarCarreras(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function nivelCarreras(id){
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
