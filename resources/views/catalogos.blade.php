@@ -2,6 +2,9 @@
 @section('content')
     <div class="contenedor">
         <h1 class="text-green font-weight-bold text-uppercase">Cátalogos</h1>
+        <br>
+        <br>
+        <br>
     </div>
 
     <div class="contendor-accesos-directos">
