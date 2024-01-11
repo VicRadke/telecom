@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuarios', function (Blueprint $table) {
-            $table->id('id_usuario');
+        Schema::create('solicitud__afrodescendentes', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
-            $table->string('nombre');
-            $table->string('usuario');
-            $table->string('contraseña');
-            $table->date('fecha');
+            $table->string('es_afrodescendiente');
+            $table->string('es_lengua_indigena');
+            $table->string('es_migrante');
+            
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('solicitud__afrodescendentes');
     }
 };

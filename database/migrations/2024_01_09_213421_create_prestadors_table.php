@@ -11,19 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('datos_personales', function (Blueprint $table) {
-            $table->id('id_datos');
+        Schema::create('prestadores', function (Blueprint $table) {
+            $table->id('id_prestador');
             $table->timestamps();
-            $table->string('apel_pat');
-            $table->string('apel_mat');
             $table->string('nombre');
-            $table->date('fecha_nac');
-            $table->string('edad');
+            $table->string('apellido_paterno');
+            $table->string('apellido_materno');
+            $table->string('tipo_identificacion');
+            $table->string('fecha_nacimineto');
             $table->string('genero');
             $table->string('estado_civil');
             $table->string('curp');
             $table->string('rfc');
-            $table->string('lugar_nac');
+            $table->string('lugar_nacimiento');
             $table->string('nacionalidad');
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('datos_personales');
+        Schema::dropIfExists('prestadores');
     }
 };

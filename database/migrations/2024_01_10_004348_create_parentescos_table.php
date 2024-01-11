@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('identificador_prestadors', function (Blueprint $table) {
-            $table->id('id_prestador');
+        Schema::create('parentescos', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
-            $table->string('identificador');
-            $table->string('no_identificador');
+            $table->string('nombre_parentesco');
+            $table->string('telefono_emergencia');
+
+            $table->unsignedBigInteger('id_referencia');
+            $table->foreign('id_referencia')->references('id_referencia')->on('referencias');
         });
     }
 
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('identificador_prestadors');
+        Schema::dropIfExists('parentescos');
     }
 };

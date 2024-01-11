@@ -1,128 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-<style>
-body {
-  font-family: sans-serif;
-  font-size: 15px;
-  
-}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/estilo-index.css">
+    <link rel="stylesheet" href="css/estilo-credencial.css">
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  
-}
+    <title>Generacion de credencial</title>
+</head>
 
-.col-md-6 {
-  flex: 0 0 50%;
-  max-width: 50%;
-  
-}
-
-.card {
-  width: 90%;
-  height: 600px;
-  border: 1px solid #ccc;
-  padding: 20px;
-  
-}
-
-.rounded {
-  border-radius: 15px;
-  
-}
-
-.card-img-top {
-  width: 100%;
-  height: 200px;
-  
-}
-
-.card-title {
-  font-size: 16px;
-  font-weight: bold;
-  text-align:center;
-}
-
-.card-text {
-  font-size: 16px;
-  text-align:center;
-}
-
-.list-group-item {
-  padding: 10px 20px;
- 
-}
-.img {
-  text-align:center;
-}
-
-    </style>
-    </head>
 <body>
-    <div class="row">
-        <div class="col-md-6">
-          <div class="card rounded">
-           
-            <div class="card-body">
-              
-               <div class= "img" >
-                 <img src="image.png" alt="Identificación">
-              </div>
-              <h5 class="card-title">José Márquez Gutiérrez</h5>
-              <p class="card-text">
-                Residente Profesional
-                <br>
-                Financiera para Bienestar
-              </p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Adscripción: Gerencia de Capacitación</li>
-                <li class="list-group-item">Domicilio: 2DA DE LUIS ARAIZA S.MZ. 5 MZ. 19 LT. 57</li>
-                <li class="list-group-item">Colonia: Vicente Guerrero</li>
-                <li class="list-group-item">Alcaldía/Municipio: Iztapalapa</li>
-                <li class="list-group-item">Código Postal: 09200</li>
-                <li class="list-group-item">Teléfono Particular: 5548292369</li>
-                <li class="list-group-item">Teléfono de Emergencia: 5532887756</li>
-              </ul>
-              <p class="card-text">
-                Vigencia: 01/09/2023 - 08/01/2024
-                <br>
-                Horario: 9:00 a 15:00
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card rounded">
-            <div class="card-body">
-              <p class="card-text">
- 
-                <br>
-   
-              </p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Adscripción: Gerencia de Crédito</li>
-                <li class="list-group-item">Domicilio: CALLE 1 NO. 234 COL. CENTRO CP 09200</li>
-                <li class="list-group-item">Colonia: Vicente Guerrero</li>
-                <li class="list-group-item">Alcaldía/Municipio: Iztapalapa</li>
-                <li class="list-group-item">Código Postal: 09200</li>
-                <li class="list-group-item">Teléfono Particular: 5548292369</li>
-                <li class="list-group-item">Teléfono de Emergencia: 5532887756</li>
-              </ul>
-              <p class="card-text">
+    <?php
+    include("elementos/barras.php");
+    ?>
+    <!-- este es el padre de los div -->
+    <div class="page-content pt-3 px-5" id="content">
+        <!-- contenedor de los elementos -->
+        <div class="contenedor">
+            <h1 class="text-green font-weight-bold text-uppercase">Generacion de credencial</h1>
+            <div class='box'>
 
-                <br>
+                <div class="form-container" id="credencial-enfrente">
+                    <form class="form">
+                        <div class="column">
+                            <div class="card shadow">
+                                <div class="credencial">
+                                    <div class="header">
+                                        <img src="images/logo.jpg" width="100px" height="55px" alt="Logo">
+                                    </div>
+                                    <div class="contenido">
+                                        <div id="foto"></div>
+                                        <div class="info">
+                                            <div>
+                                                <form class="form">
+                                                    <div class="input-box">
+                                                        <label> Nombre</label>
+                                                        <input class="input" required="" placeholder="Escribe el nombre completo" type="text">
+                                                    </div>
+                                                    <div class="input-box">
+                                                        <label> Vigencia</label>
+                                                        <input class="input input-corto" required="" placeholder="inicio" type="text">
+                                                        <input class="input input-corto" required="" placeholder="final" type="text">
+                                                    </div>
+                                                    <div class="input-box">
+                                                        <label> Horario</label>
+                                                        <input class="input input-corto" required="" placeholder="entrada" type="text">
+                                                        <input class="input input-corto" required="" placeholder="salida" type="text">
+                                                    </div>
+                                                    <div class="input-box address">
+                                                        <label>Tipo de servicio</label>
+                                                        <div class="column">
+                                                            <div class="select-box">
+                                                                <select class="input">
+                                                                    <option>RESIDENCIA PROFESIONAL</option>
+                                                                    <option>SERVICIO SOCIAL</option>
+                                                                    <option>ETC</option>  
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-              </p>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="form-container" id="credencial-atras">
+                    <form class="form">
+                        <div class="column">
+                            <div class="card shadow">
+                                <div class="credencial">
+                                    <div class="header">
+
+                                    </div>
+                                    <div class="contenido">
+                                        <div id=>
+                                        </div>
+                                        <div class="info">
+                                        <!-- <p><small>Este gafete credencial es personal e instranferible y es obligación del portador manteniendo visible dentrodel área de trabajo. En caso de extravío o deterioro por parte del portador la reposición correra por su cuenta. Este gafete credencial será entregado en la Coordinación de Reclutamiento y Selección de Personal al termino del periodo de vigencia </small></p> -->
+                                            <div>
+                                                <form class="form">
+                                                    <div class="input-box">
+                                                        <label>Adscripción:</label>
+                                                        <input class="input input-corto" required="" placeholder="adscripción" type="text">
+                                                    </div>
+                                                    <div class="input-box">
+                                                        <label>Domicilio Particular:</label>
+                                                        <input class="input input-corto" required="" placeholder="domicilio" type="text">
+                                                    </div>
+                                                    <div class="input-box">
+                                                        <label>Colonia:</label>
+                                                        <input class="input input-corto" required="" placeholder="colonia" type="text">
+                                                    </div>
+                                                    <div class="input-box">
+                                                        <label>Alc/Mun:</label>
+                                                        <input class="input input-corto" required="" placeholder="Alc/Mun" type="text">
+                                                    </div>
+                                                    <div class="input-box">
+                                                        <label>Teléfono Particular:</label>
+                                                        <input class="input input-corto" required="" placeholder="Teléfono" type="telephone">
+                                                    </div>
+                                                    <div class="input-box">
+                                                        <label>Teléfono de Emergencia:</label>
+                                                        <input class="input input-corto" required="" placeholder="Teléfono" type="telephone">
+                                                    </div>
+
+                                                    <!-- <label>AutorizaㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤFirma</label> -->
+
+                                                    <div class="centrado">
+                                                        <strong>Autoriza</strong>
+                                                        <div class="linea"></div>
+                                                        <p>Responsable de servicio Social</p>
+                                                    </div>
+
+                                                    <div class="centrado">
+                                                        <strong>Prestador</strong>
+                                                        <div class="linea"></div>
+                                                        <p>Firma</p>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                    </form>
+                </div>
             </div>
-          </div>
+
         </div>
-      </div>
-      
+
+        <!-- aqui podrias poner el footer         -->
+        <div>piee</div>
+    </div>
 </body>
+
 </html>
+<script src="js/fecha.js"></script>

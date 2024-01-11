@@ -12,18 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('domicilios', function (Blueprint $table) {
-            $table->id('id_domicilio');
+            $table->id();
             $table->timestamps();
             $table->string('calle');
-            $table->string('no_exterior');
-            $table->string('no_interior');
+            $table->string('numero_exterior');
+            $table->string('numero_interior');
             $table->string('colonia');
-            $table->string('cp');
-            $table->string('tel_fijo');
-            $table->string('tel_movil');
-            $table->string('email');
-            $table->string('entidad');
-            $table->string('alcaldia');
+            $table->string('codigo_postal');
+            $table->string('entidad_federativa');
+            $table->string('alcaldia_municipio');
+
+            $table->unsignedBigInteger('id_prestador');
+            $table->foreign('id_prestador')->references('id_prestador')->on('prestadores');
+            
 
         });
     }

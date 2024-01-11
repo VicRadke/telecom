@@ -14,7 +14,7 @@ class EmpleadoController extends Controller
         {
             return view('empleado.index')
                 ->with([
-                    'empleados' => Empleado::paginate(5)
+                    'empleados' => Prestadores::paginate(5)
                 ]);
 
         }

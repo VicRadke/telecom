@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('privilegios', function (Blueprint $table) {
-            $table->id('id_pivilegios');
+        Schema::create('modalidads', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
-            $table->string('privilegio');
+            $table->string('estadia_profesional');
+            $table->string('practicas_laborales');
+            $table->string('practicas_profesionales');
+            $table->string('residencias_profesionales');
+            $table->string('servicio_social');
         });
     }
 
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('privilegios');
+        Schema::dropIfExists('modalidads');
     }
 };
