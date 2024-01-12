@@ -24,4 +24,4 @@
         </div>
     </body>
 </html>
-<script src="js/fecha.js"></script>
+<script src="/js/fecha.js"></script>

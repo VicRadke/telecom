@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Empleado;
+use App\Models\Prestador;
 use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
@@ -14,7 +14,7 @@ class EmpleadoController extends Controller
         {
             return view('empleado.index')
                 ->with([
-                    'empleados' => Prestadores::paginate(5)
+                    'empleados' => Prestador::paginate(5)
                 ]);
 
         }
@@ -40,7 +40,7 @@ class EmpleadoController extends Controller
             $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','Public');
         }
         
-        Empleado::insert($datosEmpleado);
+        Prestador::insert($datosEmpleado);
 
         return response()->json($datosEmpleado);
     }
@@ -48,7 +48,7 @@ class EmpleadoController extends Controller
     /**
      * Display the specified resource.
      */
-     public function show(Empleado $empleado)
+     public function show(Prestador $empleado)
     {
         //
     }
@@ -56,7 +56,7 @@ class EmpleadoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Empleado $empleado)
+    public function edit(Prestador $empleado)
     {
         //
     }
@@ -64,7 +64,7 @@ class EmpleadoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Empleado $empleado)
+    public function update(Request $request, Prestador $empleado)
     {
         //
     }
@@ -72,7 +72,7 @@ class EmpleadoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Empleado $empleado)
+    public function destroy(Prestador $empleado)
     {
         //
     }
