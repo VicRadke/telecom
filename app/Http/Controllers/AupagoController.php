@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class reportes extends Controller
+class AupagoController extends Controller
 {
- 
     //
     public function index()
 {
     // Tu lógica para la página
-    return view('reportes');
+    return view('aupago');
 }
 }
