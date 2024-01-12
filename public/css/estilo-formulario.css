@@ -166,3 +166,34 @@
   background-color: transparent;
   border: none;
 }
+
+
+/* aqui borra pa bajo */
+
+.form-container {
+	width: 350px;
+	height: 580px;
+	background-color: #fff;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 20px 30px;
+  }
+  #content{
+    background-image: url("../images/dorado.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    }
+  
+    .contenedor{
+    justify-content: center;
+    text-align: center;
+    }
+    
+    .box{
+    background-color: transparent;
+      display: flex;
+      justify-content: space-around;
+    margin-bottom: 5rem;
+    }
