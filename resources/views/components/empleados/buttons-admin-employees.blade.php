@@ -1,37 +1,21 @@
 {{-- Sección Botones --}}
 <div class="contendor-accesos-directos">
-    <div class="accesos-directos pt-3" onclick="mostrarFormulario('div2')">
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                class="bi bi-person-gear" viewBox="0 0 16 16">
-                <path
-                    d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Zm3.63-4.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
-            </svg>
-            <p>Modificar</p>
-        </div>
-    </div>
+    <x-empleados.boton-admin name="Modificar">
+        <x-slot:image>
+            <x-empleados.icono-modificar />
+        </x-slot:image>
+    </x-empleados.boton-admin>
 
-    <div class="accesos-directos pt-3" onclick="mostrarFormulario('div3')">
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                class="bi bi-person-slash" viewBox="0 0 16 16">
-                <path
-                    d="M13.879 10.414a2.501 2.501 0 0 0-3.465 3.465l3.465-3.465Zm.707.707-3.465 3.465a2.501 2.501 0 0 0 3.465-3.465Zm-4.56-1.096a3.5 3.5 0 1 1 4.949 4.95 3.5 3.5 0 0 1-4.95-4.95ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
-            </svg>
-            <p>Eliminar</p>
-        </div>
-    </div>
+    <x-empleados.boton-admin name="Eliminar">
+        <x-slot:image>
+            <x-empleados.icono-eliminar />
+        </x-slot:image>
+    </x-empleados.boton-admin>
 
-    <a class="accesos-directos pt-3" href="{{ route('empleado.search') }}">
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                class="bi bi-person-vcard" viewBox="0 0 16 16">
-                <path
-                    d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z" />
-                <path
-                    d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z" />
-            </svg>
-            <p>Consultar</p>
-        </div>
-    </a>
+    <x-empleados.boton-admin name="Consultar" href="{{ route('empleado.search') }}">
+        <x-slot:image>
+            <x-empleados.icono-consultar />
+        </x-slot:image>
+    </x-empleados.boton-admin>
+
 </div>{{-- Fin Sección botones --}}
