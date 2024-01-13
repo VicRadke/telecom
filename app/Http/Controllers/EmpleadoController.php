@@ -50,7 +50,14 @@ class EmpleadoController extends Controller
      */
      public function show(Prestador $empleado)
     {
-        //
+        return view('empleado.show')->with([
+            'empleado' =>  $empleado
+        ]);
+    }
+
+    public function search()
+    {
+        return view('empleado.search');
     }
 
     /**

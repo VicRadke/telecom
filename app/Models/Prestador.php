@@ -25,4 +25,9 @@ class Prestador extends Model
         'lugar_nacimiento',
         'nacionalidad',
     ];
+
+    public function getSpanishBirthDateAttribute()
+    {
+        return date('d/m/Y', strtotime($this->fecha_nacimineto));
+    }
 }

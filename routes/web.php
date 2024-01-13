@@ -77,6 +77,8 @@ Route::get('/catalogos', [CatalogoController::class, 'index'])->name('catalogo.i
 Route::post('/solicitudes/create', [SolicitudController::class, 'store'])->name('solicitud.store');
 
 Route::get('/empleados', [EmpleadoController::class, 'index'])->name('empleado.index');
+Route::get('/empleados/consulta', [EmpleadoController::class, 'search'])->name('empleado.search');
+Route::get('/empleados/consulta/{empleado}', [EmpleadoController::class, 'show'])->name('empleado.show');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
