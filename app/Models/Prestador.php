@@ -9,4 +9,20 @@ class Prestador extends Model
 {
     use HasFactory;
     protected $table = 'prestadores';
+
+    protected $primaryKey = 'id_prestador';
+    protected $fillable = [
+        'nombre',
+        'apellido_paterno',
+        'apellido_materno',
+        'tipo_identificacion',
+        'id_prestador',
+        'fecha_nacimineto',
+        'genero',
+        'estado_civil',
+        'curp',
+        'rfc',
+        'lugar_nacimiento',
+        'nacionalidad',
+    ];
 }

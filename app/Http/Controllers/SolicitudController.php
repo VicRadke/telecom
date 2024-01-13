@@ -3,6 +3,7 @@
 //use App\Models\Solicitud;
 namespace App\Http\Controllers;
 
+use App\Models\Prestador;
 use App\Models\Solicitud;
 
 use Illuminate\Http\Request;
@@ -16,12 +17,12 @@ class SolicitudController extends Controller {
 
 
     public function store(Request $request) {
-        $this->validate($request, [
+        $validatedData = $this->validate($request, [
             'nombre' => 'required',
             'apellido_paterno' => 'required',
             'apellido_materno' => 'required',
             'tipo_identificacion' => 'required',
-            'id_prestador' => 'required',
+            'id_prestador' => 'required|numeric',
             'fecha_nacimiento' => 'required',
             'genero' => 'required',
             'estado_civil' => 'required',
@@ -74,6 +75,11 @@ class SolicitudController extends Controller {
             'direccion_referencia_personal_2' => 'required',
             'telefono_referencia_personal_2' => 'required',
         ]);
+        // cambiamos fecha_nacimiento a fecha_nacimineto
+        $validatedData['fecha_nacimineto'] = $validatedData['fecha_nacimiento'];
+        
+        $prestador = new Prestador($validatedData);
+        $prestador->save();
         // TODO: guardar registro en la BD.
         // TODO: Avisar en el front si fue exitoso o no.
         return redirect()->route('dashboard')->with('success', 'Solicitud creada exitosamente');
