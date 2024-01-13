@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nombre_programa');
             $table->string('clave');
             $table->date('vigencia');
-            $table->int('cupo');
+            $table->integer('cupo');
         });
     }
 
