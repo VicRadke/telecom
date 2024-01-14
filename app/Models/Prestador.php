@@ -26,6 +26,11 @@ class Prestador extends Model
         'nacionalidad',
     ];
 
+    public function getFullNameAttribute()
+    {
+        return "{$this->nombre} {$this->apellido_paterno} {$this->apellido_materno}";
+    }
+
     public function getSpanishBirthDateAttribute()
     {
         return date('d/m/Y', strtotime($this->fecha_nacimineto));

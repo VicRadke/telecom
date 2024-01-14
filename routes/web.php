@@ -80,6 +80,8 @@ Route::get('/empleados', [EmpleadoController::class, 'index'])->name('empleado.i
 Route::get('/empleados/consulta', [EmpleadoController::class, 'search'])->name('empleado.search');
 Route::post('/empleados/busqueda', [EmpleadoController::class, 'do_search'])->name('empleado.do.search');
 Route::get('/empleados/consulta/{empleado}', [EmpleadoController::class, 'show'])->name('empleado.show');
+Route::delete('/empleados/{empleado}', [EmpleadoController::class, 'destroy'])->name('empleado.destroy');
+Route::get('/empleados/{empleado}/edit', [EmpleadoController::class, 'edit'])->name('empleado.edit');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

@@ -57,7 +57,11 @@ class EmpleadoController extends Controller
 
     public function search()
     {
-        return view('empleado.search');
+        $listEmployees = Prestador::paginate(5);
+        return view('empleado.search')
+            ->with([
+                'employees' => $listEmployees
+            ]);
     }
 
     public function do_search(Request $request)
@@ -77,7 +81,7 @@ class EmpleadoController extends Controller
      */
     public function edit(Prestador $empleado)
     {
-        //
+        return "edit no implementado";
     }
 
     /**
@@ -93,6 +97,6 @@ class EmpleadoController extends Controller
      */
     public function destroy(Prestador $empleado)
     {
-        //
+        return "destroy no implementado";
     }
 }
