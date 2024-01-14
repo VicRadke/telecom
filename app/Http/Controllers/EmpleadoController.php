@@ -60,6 +60,18 @@ class EmpleadoController extends Controller
         return view('empleado.search');
     }
 
+    public function do_search(Request $request)
+    {
+        $id_prestador = $request->input('id_prestador');
+        $empleado = Prestador::where('id_prestador', $id_prestador)->first();
+        if(!$empleado){
+            return redirect()->route('empleado.search')->withErrors([
+                'id_prestador' => 'No se encontró el empleado con el ID especificado.'
+            ]);
+        }
+        return redirect()->route('empleado.show', $empleado);
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

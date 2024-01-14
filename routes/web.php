@@ -78,6 +78,7 @@ Route::post('/solicitudes/create', [SolicitudController::class, 'store'])->name(
 
 Route::get('/empleados', [EmpleadoController::class, 'index'])->name('empleado.index');
 Route::get('/empleados/consulta', [EmpleadoController::class, 'search'])->name('empleado.search');
+Route::post('/empleados/busqueda', [EmpleadoController::class, 'do_search'])->name('empleado.do.search');
 Route::get('/empleados/consulta/{empleado}', [EmpleadoController::class, 'show'])->name('empleado.show');
 
 // Route::get('/dashboard', function () {
