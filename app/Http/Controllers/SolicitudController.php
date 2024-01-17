@@ -80,7 +80,7 @@ class SolicitudController extends Controller {
         
         $prestador = new Prestador($validatedData);
         $prestador->save();
-        // TODO: guardar registro en la BD.
+        // TODO: Subir todo el form y en el dit tambien lo editado 
         // TODO: Avisar en el front si fue exitoso o no.
         return redirect()->route('dashboard.index')->with('success', 'Solicitud creada exitosamente');
     }
