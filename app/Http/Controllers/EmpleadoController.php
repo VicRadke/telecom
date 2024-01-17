@@ -81,7 +81,9 @@ class EmpleadoController extends Controller
      */
     public function edit(Prestador $empleado)
     {
-        return "edit no implementado";
+        return view('empleado.edit')->with([
+            'empleado' => $empleado
+        ]);
     }
 
     /**
@@ -89,7 +91,11 @@ class EmpleadoController extends Controller
      */
     public function update(Request $request, Prestador $empleado)
     {
-        //
+        $datosEmpleado = request()->except(['_token','_method']);
+        $empleado->update($datosEmpleado);
+        return redirect()
+            ->route('empleado.show', $empleado)
+            ->with('success', 'Empleado actualizado correctamente');
     }
 
     /**

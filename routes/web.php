@@ -31,7 +31,6 @@ Route::name('imprimir')->get('/imprimir', [ImpresionPDFController::class, 'impri
 
 Route::get('/', function () {
     return view('welcome');
-    #return dump(config("database"));
 });
 
 Route::get('/prestadores', function () {
@@ -82,6 +81,7 @@ Route::post('/empleados/busqueda', [EmpleadoController::class, 'do_search'])->na
 Route::get('/empleados/consulta/{empleado}', [EmpleadoController::class, 'show'])->name('empleado.show');
 Route::delete('/empleados/{empleado}', [EmpleadoController::class, 'destroy'])->name('empleado.destroy');
 Route::get('/empleados/{empleado}/edit', [EmpleadoController::class, 'edit'])->name('empleado.edit');
+Route::patch('/empleados/{empleado}', [EmpleadoController::class, 'update'])->name('empleado.update');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

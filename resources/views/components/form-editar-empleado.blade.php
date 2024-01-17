@@ -7,13 +7,12 @@
     @foreach($errors->all() as $error)
         <p>{{$error}}</p>
     @endforeach         
-    <h1 class="text-green font-weight-bold text-uppercase">Solicitud de Servicio Social y Prácticas
-        Profesionales</h1>
-    <form class="form" method='POST' action="{{route('solicitud.store')}}">
+    <form class="form" method='POST' action="{{route('empleado.update', $empleado)}}">
+        @method('patch')
         @csrf
         <div class="input-box">
             <label> Nombre (s)</label>
-            <input required placeholder="Escribe el nombre completo" type="text" name='nombre' value="{{ old('nombre') }}">
+            <input required placeholder="Escribe el nombre completo" type="text" name='nombre' value="{{ $empleado->nombre }}">
             @error('nombre')
                 <br>
                 <small>*{{ $message }}</small>  
@@ -22,7 +21,7 @@
         </div>
         <div class="input-box">
             <label> Apellido Paterno</label>
-            <input required placeholder="Escribe el apellido paterno" type="text" name='apellido_paterno' value="{{ old('apellido_paterno') }}">
+            <input required placeholder="Escribe el apellido paterno" type="text" name='apellido_paterno' value="{{ $empleado->apellido_paterno }}">
             @error('apellido_paterno')
             <br>
             <small>*{{ $message }}</small>
@@ -31,14 +30,13 @@
         </div>
         <div class="input-box">
             <label> Apellido Materno</label>
-            <input required placeholder="Escribe el apellido " type="text" name='apellido_materno' value="{{ old('apellido_materno') }}">
+            <input required placeholder="Escribe el apellido " type="text" name='apellido_materno' value="{{ $empleado->apellido_materno }}">
             @error('apellido_materno')
             <br>
             <small>*{{ $message }}</small>
             </br>
         @enderror
         </div>
-
         {{-- TODO: verificar que se guarde el tipo de identificación --}}
         <div class="input-box address">
             <label>Identificador del Prestador</label>
@@ -52,7 +50,7 @@
                         <option value="controls">Control</option>
                     </select>
                 </div>
-                <input required placeholder="Número de identificador" type="text" name='id_prestador' value="{{ old('id_prestador') }}">
+                <input required placeholder="Número de identificador" type="text" name='id_prestador' value="{{ $empleado->id_prestador }}">
                 @error('id_prestador')
                 <br>
                 <small>*{{ $message }}</small>
@@ -64,21 +62,12 @@
         <div class="column">
             <div class="input-box">
                 <label>Fecha de Nacimiento</label>
-                <input required placeholder="Fecha" type="date" name='fecha_nacimiento' value="{{ old('fecha_nacimiento') }}">
+                <input required placeholder="Fecha" type="date" name='fecha_nacimiento' value="{{ $empleado->fecha_nacimineto }}">
                 @error('fecha_nacimiento')
                 <br>
                 <small>*{{ $message }}</small>
                 </br>
                 @enderror
-            </div>
-            <div class="input-box">
-                <label>Edad</label>
-                <input required placeholder="edad" type="telephone" name='edad' value="{{ old('edad') }}">
-                @error('edad')
-                <br>
-                <small>*{{ $message }}</small>
-                </br>
-            @enderror
             </div>
         </div>
 
@@ -88,9 +77,9 @@
                 <div class="select-box">
                     <select name='genero'>
                         <option hidden="">Género</option>
-                        <option>Masculino</option>
-                        <option>Femenino</option>
-                        <option>No Binario</option>
+                        <option value="M" {{ $empleado->genero == 'M' ? 'selected' : '' }}>Masculino</option>
+                        <option value="F" {{ $empleado->genero == 'F' ? 'selected' : '' }}>Femenino</option>
+                        <option value="O" {{ $empleado->genero == 'O' ? 'selected' : '' }}>No Binario</option>
                     </select>
                     @error('genero')
                     <br>
@@ -106,9 +95,9 @@
                 <div class="select-box">
                     <select name='estado_civil'>
                         <option>Estado Civil</option>
-                        <option>Soltero</option>
-                        <option>Casado</option>
-                        <option>Otro</option>
+                        <option {{ $empleado->estado_civil == 'Soltero' ? 'selected' : '' }}> Soltero</option>
+                        <option {{ $empleado->estado_civil == 'Casado' ? 'selected' : '' }}>Casado</option>
+                        <option {{ $empleado->estado_civil == 'Otro' ? 'selected' : '' }}>Otro</option>
                     </select>
                     @error('estado_civil')
                     <br>
@@ -121,7 +110,7 @@
         <div class="column">
             <div class="input-box">
                 <label>CURP</label>
-                <input required placeholder="CURP" type="text" name='curp' value="{{ old('curp') }}">
+                <input required placeholder="CURP" type="text" name='curp' value="{{ $empleado->curp }}">
                 @error('curp')
                 <br>
                 <small>*{{ $message }}</small>
@@ -130,7 +119,7 @@
             </div>
             <div class="input-box">
                 <label>RFC</label>
-                <input required placeholder="RFC" type="text" name='rfc' value="{{ old('rfc') }}">
+                <input required placeholder="RFC" type="text" name='rfc' value="{{ $empleado->rfc }}">
                 @error('rfc')
                 <br>
                 <small>*{{ $message }}</small>
@@ -141,7 +130,7 @@
         <div class="column">
             <div class="input-box">
                 <label>Lugar de Nacimiento</label>
-                <input required placeholder="Lugar de Nacimiento" type="text" name='lugar_nacimiento' value="{{ old('lugar_nacimiento') }}">
+                <input required placeholder="Lugar de Nacimiento" type="text" name='lugar_nacimiento' value="{{ $empleado->lugar_nacimiento }}">
                 @error('lugar_nacimiento')
                 <br>
                 <small>*{{ $message }}</small>
@@ -150,7 +139,7 @@
             </div>
             <div class="input-box">
                 <label>Nacionalidad</label>
-                <input required placeholder="Nacionalidad" type="text" name='nacionalidad' value="{{ old('nacionalidad') }}">
+                <input required placeholder="Nacionalidad" type="text" name='nacionalidad' value="{{ $empleado->nacionalidad }}">
                 @error('nacionalidad')
                 <br>
                 <small>*{{ $message }}</small>
@@ -159,7 +148,7 @@
             </div>
         </div>
         <br>
-        <div class="input-box address">
+        {{-- <div class="input-box address">
             <p style="text-align:center">DOMICILIO</p>
             <div class="column">
                 <div class="input-box">
@@ -633,10 +622,9 @@
             </div>
         </div>
         <br>
-        <br>
-        <button>Guardar</button>
+        <br> --}}
+        <button>Actualizar empleado</button>
         <br>
         <br>
     </form>
 </div>
-
