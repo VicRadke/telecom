@@ -97,6 +97,11 @@ class EmpleadoController extends Controller
      */
     public function destroy(Prestador $empleado)
     {
-        return "destroy no implementado";
+        
+            $empleado->delete();
+            return redirect()->route('empleado.index');
+            // return "destroy no implementado";
+      }
+        
     }
-}
+

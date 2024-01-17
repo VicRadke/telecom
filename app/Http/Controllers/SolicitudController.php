@@ -82,6 +82,6 @@ class SolicitudController extends Controller {
         $prestador->save();
         // TODO: guardar registro en la BD.
         // TODO: Avisar en el front si fue exitoso o no.
-        return redirect()->route('dashboard')->with('success', 'Solicitud creada exitosamente');
+        return redirect()->route('dashboard.index')->with('success', 'Solicitud creada exitosamente');
     }
 }
