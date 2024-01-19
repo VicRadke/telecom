@@ -9,11 +9,9 @@
 
     <title>Generacion de credencial</title>
 </head>
-
+<style>
 <body>
-    <?php
-    include("elementos/barras.php");
-    ?>
+    
     <!-- este es el padre de los div -->
     <div class="page-content pt-3 px-5" id="content">
         <!-- contenedor de los elementos -->
@@ -143,7 +141,7 @@
         </div>
 
         <!-- aqui podrias poner el footer         -->
-        <div>piee</div>
+        <div></div>
     </div>
 </body>
 
