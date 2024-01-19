@@ -315,8 +315,8 @@
                         <div class="select-box">
                             <select>
                                 <option hidden="">Cetis</option>
-                                <option>nddoik</option>
-                                <option>kdqjiodw</option>
+                                <option>Tecnologico</option>
+                                <option>UAM</option>
                             </select>
                         </div>
                     </div>
