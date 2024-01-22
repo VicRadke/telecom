@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+
+<head>
+    <link rel="stylesheet" href="css/estilo-formulario.css">
+    <link rel="stylesheet" href="css/estilo-index.css">
+    <link rel="stylesheet" href="css/estilo-credencial.css">
+</head>
     <!-- contenedor de los elementos -->
     <div class="contenedor">
         <h1 class="text-green font-weight-bold text-uppercase">Generacion de credencial</h1>

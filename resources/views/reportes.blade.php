@@ -31,7 +31,7 @@
                     </div></div>
                 </div>
     
-    
+                <h5 class="text-black font-weight-bold text-uppercase">Generar Reportes</h5>
                 <div class='box'>
     
                 <div class="form-container">

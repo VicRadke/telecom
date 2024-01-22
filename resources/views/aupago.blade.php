@@ -35,10 +35,10 @@
   <div class="form-container">
 <form class="form">
 
-  <div class="input-box address">
+  <div>
               <label>Año</label>
               <div class="column">
-                  <div class="select-box">
+                  <div>
                   <select class="input">
                             <option hidden="">2023</option>
                         </select>
@@ -46,10 +46,10 @@
               </div>
           </div>
 
-          <div class="input-box address">
+          <div>
               <label>Periodo</label>
               <div class="column">
-                  <div class="select-box">
+                  <div>
                   <select class="input">
                             <option>Elija una opción</option>
                             <option>Enero</option>

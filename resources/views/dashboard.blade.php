@@ -1,6 +1,11 @@
 
 @extends('layouts.app')           
 @section('content')
+<head>
+    <link rel="stylesheet" href="css/estilo-formulario.css">
+    <link rel="stylesheet" href="css/estilo-index.css">
+</head>
+
     <div class="contenedor">     
         <div id="carrusel-contenido">
             <div id="carrusel-caja">
