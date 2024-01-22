@@ -7,16 +7,15 @@
     <link rel="stylesheet" href="css/estilo-index.css">
     <link rel="stylesheet" href="css/estilo-credencial.css">
 
-    <title>Generacion de credencial</title>
+    <title>Credencial prestador</title>
 </head>
-<style>
 <body>
     
     <!-- este es el padre de los div -->
     <div class="page-content pt-3 px-5" id="content">
         <!-- contenedor de los elementos -->
         <div class="contenedor">
-            <h1 class="text-green font-weight-bold text-uppercase">Generacion de credencial</h1>
+            
             <div class='box'>
 
                 <div class="form-container" id="credencial-enfrente">
@@ -53,7 +52,7 @@
                                                                 <select class="input">
                                                                     <option>RESIDENCIA PROFESIONAL</option>
                                                                     <option>SERVICIO SOCIAL</option>
-                                                                    <option>ETC</option>  
+                                                                    <option>ETC</option>
                                                                 </select>
                                                             </div>
                                                         </div>

@@ -1,6 +1,6 @@
 .form-container {
-	width: 300px;
-	height: 300px;
+	width: 200px;
+	height: 200px;
 	background-color: #fff;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	border-radius: 10px;
@@ -113,7 +113,7 @@
 	justify-content: center;
 	align-items: center;
 	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-		  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+		  "Lucida Sans Unicode", "Geneva", "Verdana", "sans-serif";
 	font-size: 11px;
 	gap: 5px;
   }
