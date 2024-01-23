@@ -5,11 +5,11 @@
             <x-empleados.icono-modificar />
         </x-slot:image>
     </x-empleados.boton-admin>
-    <x-empleados.boton-admin name="Modificar">
+    {{-- <x-empleados.boton-admin name="Modificar">
         <x-slot:image>
             <x-empleados.icono-modificar />
         </x-slot:image>
-    </x-empleados.boton-admin>
+    </x-empleados.boton-admin> --}}
 
     {{-- <x-empleados.boton-admin name="Eliminar">
         <x-slot:image>
