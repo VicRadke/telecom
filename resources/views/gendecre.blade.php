@@ -12,7 +12,9 @@
         <label for="nombrePrestador">Nombre del Prestador:</label>
         <input type="text" id="nombrePrestador" required>
 
-        <button onclick="generarCredencial()"><a href="{{ route('imprimir') }}">Generar credencial</a></button>
+        <button onclick="generarCredencial()"><a href="{{ route('imprimir') }}"
+                target="_blank"
+            >Generar credencial</a></button>
 
     </div>
 
