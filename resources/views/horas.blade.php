@@ -100,8 +100,7 @@
 
             </div>
         </div>
-        <!-- aqui podrias poner el footer         -->
-        <div>piee</div>
+        
 </body>
 
 </html>

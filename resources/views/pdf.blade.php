@@ -68,7 +68,7 @@
             <div class="contenido-credencial" >
                 <div class="logo-header-card">
                     <img src="images/logo.jpg" alt="Logo"
-                    style="display: block; margin-left: auto; margin-right: auto; width: 2cm; height: auto;"/>
+                    style="display: block; margin-center: auto; margin-right: auto; width: 2cm; height: auto;"/>
                 </div>
             </div>
 
@@ -139,26 +139,26 @@
                     <div class="personal-data-card-content">
                         <div class="personal-data-card-content-item">
                             <div class="personal-data-card-content-item-title">
-                                Nombre:
+                                Adscripción:
                             </div>
                             <div class="personal-data-card-content-item-value">
-                                Pablo
+                                Por asignar
                             </div>
                         </div>
                         <div class="personal-data-card-content-item">
                             <div class="personal-data-card-content-item-title">
-                                Apellido:
+                                Matricula:
                             </div>
                             <div class="personal-data-card-content-item-value">
-                                Perez
+                                {{ $empleado->id_prestador }}
                             </div>
                         </div>
                         <div class="personal-data-card-content-item">
                             <div class="personal-data-card-content-item-title">
-                                Vigencia:
+                                Fecha de nacimiento:
                             </div>
                             <div class="personal-data-card-content-item-value">
-                                11/11/2024
+                                {{ $empleado->fecha_nacimineto}}
                             </div>
                         </div>
                         <div class="personal-data-card-content-item">
@@ -172,10 +172,23 @@
 
                         <div class="personal-data-card-content-item">
                             <div class="personal-data-card-content-item-title">
-                                Tipo de servicio
+                                Tipo de servicio:
                             </div>
                             <div class="personal-data-card-content-item-value">
                                 Residencia profesional
+                            </div>
+                            <div class="centrado">
+                                <strong>Autoriza</strong>
+                                <div class="linea"></div>
+                                <p>______________________________</p>
+                                <p>Responsable de servicio Social</p>
+                            </div>
+
+                            <div class="centrado">
+                                <strong>Prestador</strong>
+                                <div class="linea"></div>
+                                <p>______________________________</p>
+                                <p>Firma</p>
                             </div>
                         </div>
                     </div>
