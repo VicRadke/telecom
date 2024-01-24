@@ -27,7 +27,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::name('imprimir')->get('/imprimir', [ImpresionPDFController::class, 'imprimir']);
+Route::name('generar-credencial')->post('/imprimir', [ImpresionPDFController::class, 'imprimir']);
 
 Route::get('/', function () {
     return view('welcome');

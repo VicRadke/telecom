@@ -88,15 +88,15 @@
                                 Nombre:
                             </div>
                             <div class="personal-data-card-content-item-value">
-                                Pablo
+                                {{ $empleado->nombre }}
                             </div>
                         </div>
                         <div class="personal-data-card-content-item">
                             <div class="personal-data-card-content-item-title">
-                                Apellido:
+                                Apellidos:
                             </div>
                             <div class="personal-data-card-content-item-value">
-                                Perez
+                                {{ $empleado->apellido_paterno }} {{ $empleado->apellido_materno }}
                             </div>
                         </div>
                         <div class="personal-data-card-content-item">

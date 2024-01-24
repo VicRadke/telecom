@@ -3,19 +3,18 @@
 
     <head>
         {{-- <link rel="stylesheet" href="css/estilo-formulario.css"> --}}
-        <link rel="stylesheet" href="css/estilo-index.css">
-        <link rel="stylesheet" href="css/estilo-credencial.css">
     </head>
     <!-- contenedor de los elementos -->
     <div class="contenedor">
-        <h1 class="text-green font-weight-bold text-uppercase">Generacion de credencial</h1>
-        <label for="nombrePrestador">Nombre del Prestador:</label>
-        <input type="text" id="nombrePrestador" required>
-
-        <button onclick="generarCredencial()"><a href="{{ route('imprimir') }}"
-                target="_blank"
-                >Generar credencial</a></button>
-
+        <form action="{{ route('generar-credencial') }}" method="POST" class="form">
+            @csrf
+            <h1 class="text-green font-weight-bold text-uppercase">Generación de credencial</h1>
+            <label for="id_prestador">Matrícula del Prestador:</label>
+            <input type="text" id="id_prestador" name="id_prestador" required>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+                Generar credencial
+            </button>
+        </form>
     </div>
 
 

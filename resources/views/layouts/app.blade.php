@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/css/estilo.css">
     <link rel="stylesheet" href="/css/estilo-catalogo.css">
     <link rel="stylesheet" href="/css/estilo-credencia.css">
+    <link rel="stylesheet" href="/css/estilo-index.css">
+    <link rel="stylesheet" href="/css/estilo-credencial.css">
     {{-- <link rel="stylesheet" href="/css/estilo-formulario-reporte.css"> --}}
 
 
