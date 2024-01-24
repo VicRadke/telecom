@@ -14,7 +14,7 @@
 
         <button onclick="generarCredencial()"><a href="{{ route('imprimir') }}"
                 target="_blank"
-            >Generar credencial</a></button>
+                >Generar credencial</a></button>
 
     </div>
 
