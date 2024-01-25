@@ -17,7 +17,7 @@ class ImpresionPDFController extends BaseController
         $id_prestador = $request->input('id_prestador');
         $empleado = Prestador::find($id_prestador);
         $pdf = \PDF::loadView('pdf', ['empleado' => $empleado]);
-        return $pdf->download('test.pdf');
+        return $pdf->download('credencial.pdf');
     }
 }
     
