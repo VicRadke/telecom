@@ -1,6 +1,70 @@
 @extends('layouts.app')
 @section('content')
+<script>
+    // script.js
+document.addEventListener('DOMContentLoaded', function () {
+  var eliminarBtn = document.getElementById('eliminarBtn');
+  var popupContainer = document.createElement('div');
+  popupContainer.className = 'popup-container';
+
+  var popupMessage = document.createElement('div');
+  popupMessage.className = 'popup-message';
+  popupMessage.textContent = '¿Seguro que desea eliminar?';
+
+  var popupButtons = document.createElement('div');
+  popupButtons.className = 'popup-buttons';
+
+  var confirmButton = document.createElement('button');
+  confirmButton.textContent = 'Sí';
+  confirmButton.addEventListener('click', function () {
+    alert('Eliminar lógico aquí'); 
+    popupContainer.style.display = 'none';
+  });
+
+  var cancelButton = document.createElement('button');
+  cancelButton.textContent = 'No';
+  cancelButton.addEventListener('click', function () {
+    popupContainer.style.display = 'none';
+  });
+
+  popupButtons.appendChild(confirmButton);
+  popupButtons.appendChild(cancelButton);
+
+  popupContainer.appendChild(popupMessage);
+  popupContainer.appendChild(popupButtons);
+  document.body.appendChild(popupContainer);
+
+  eliminarBtn.addEventListener('click', function () {
+    popupContainer.style.display = 'block';
+  });
+});
+</script>
 <style>
+    .popup-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.popup-message {
+  margin-bottom: 10px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-buttons button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
     /* Estilo para el formulario de búsqueda */
 .form-inline {
     display: flex;
@@ -122,7 +186,7 @@ th {
                     <form action="{{ route('empleado.destroy', $employee->id_prestador) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                        <button id="eliminarBtn" type="submit" class="btn btn-danger">Eliminar</button>
                     </form>
                 </td>
             </tr>
