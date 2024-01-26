@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::table('prestadores', function (Blueprint $table) {
             $table->string('matricula')->unique() 
-                                       ->Nullable();
+                                       ->nullable();
             //
         });
     }
