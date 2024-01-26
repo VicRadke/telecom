@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nombre_referencia_persona_2');
             $table->string('direccion_referencia_persona_2');
             $table->string('telefono_referencia_persona_2');
+            
 
         });
     }
