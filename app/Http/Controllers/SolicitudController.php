@@ -125,7 +125,13 @@ class SolicitudController extends Controller {
             $referenciaPersonal2->telefono_referencia_personal = $validatedData['telefono_referencia_personal_2'];
             $referenciaPersonal2->id_prestador = $prestador->id_prestador;
             $referenciaPersonal2->save();
-
+            $contactoEmergencia = new Referencia();
+            $contactoEmergencia->nombre_referencia_personal = $validatedData['nombre_contacto_emergencia'];
+            $contactoEmergencia->telefono_referencia_personal = $validatedData['telefono_celular_contacto_emergencia'];
+            $contactoEmergencia->telefono_otro_referencia_personal = $validatedData['telefono_otro_contacto_emergencia'];
+            $contactoEmergencia->id_parentesco = Parentesco::CONTACTO_EMERGENCIA;
+            $contactoEmergencia->id_prestador = $prestador->id_prestador;
+            $contactoEmergencia->save();
             DB::commit();
             exit();
         } catch (\Throwable $th) {

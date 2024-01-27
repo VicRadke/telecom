@@ -18,6 +18,7 @@ class ParentescosSeeder extends Seeder
             ['id' => 1, 'name' => 'Padre'],
             ['id' => 2, 'name' => 'Madre'],
             ['id' => 3, 'name' => 'Cónyugue'],
+            ['id' => 4, 'name' => 'Contacto de emergencia'],
         ]);
     }
 }
