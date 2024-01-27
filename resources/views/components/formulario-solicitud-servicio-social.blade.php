@@ -498,7 +498,7 @@
         <div class="input-box address">
             <div class="column">
                 <div class="input-box">
-                    <label>Esposa</label>
+                    <label>Esposo/Esposa</label>
                     <input required placeholder="Nombre del Padre" type="text" name='nombre_conyuge' oninput="convertirAMayusculas(this)" value="{{ old('nombre_conyuge') }}">
                     @error('nombre_conyuge')
                     <br>

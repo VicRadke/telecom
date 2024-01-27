@@ -4,7 +4,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Domicilio;
+use App\Models\Parentesco;
 use App\Models\Prestador;
+use App\Models\Referencia;
 use App\Models\Solicitud;
 
 use Illuminate\Http\Request;
@@ -90,6 +92,40 @@ class SolicitudController extends Controller {
             $solicitud = new Solicitud($validatedData);
             $solicitud['id_prestador'] = $prestador->id_prestador;
             $solicitud->save();
+            $referenciaPadre = new Referencia();
+            $referenciaPadre->nombre_referencia_personal = $validatedData['nombre_padre'];
+            $referenciaPadre->direccion_referencia_personal = $validatedData['domicilio_padre'];
+            $referenciaPadre->telefono_referencia_personal = $validatedData['telefono_padre'];
+            $referenciaPadre->id_parentesco = Parentesco::PADRE;
+            $referenciaPadre->id_prestador = $prestador->id_prestador;
+            $referenciaPadre->save();
+            $referenciaMadre = new Referencia();
+            $referenciaMadre->nombre_referencia_personal = $validatedData['nombre_madre'];
+            $referenciaMadre->direccion_referencia_personal = $validatedData['domicilio_madre'];
+            $referenciaMadre->telefono_referencia_personal = $validatedData['telefono_madre'];
+            $referenciaMadre->id_parentesco = Parentesco::MADRE;
+            $referenciaMadre->id_prestador = $prestador->id_prestador;
+            $referenciaMadre->save();
+            $referenciaConyuge = new Referencia();
+            $referenciaConyuge->nombre_referencia_personal = $validatedData['nombre_conyuge'];
+            $referenciaConyuge->direccion_referencia_personal = $validatedData['domicilio_conyuge'];
+            $referenciaConyuge->telefono_referencia_personal = $validatedData['telefono_conyuge'];
+            $referenciaConyuge->id_parentesco = Parentesco::CONYUGE;
+            $referenciaConyuge->id_prestador = $prestador->id_prestador;
+            $referenciaConyuge->save();
+            $referenciaPersonal = new Referencia();
+            $referenciaPersonal->nombre_referencia_personal = $validatedData['nombre_referencia_personal'];
+            $referenciaPersonal->direccion_referencia_personal = $validatedData['direccion_referencia_personal'];
+            $referenciaPersonal->telefono_referencia_personal = $validatedData['telefono_referencia_personal'];
+            $referenciaPersonal->id_prestador = $prestador->id_prestador;
+            $referenciaPersonal->save();
+            $referenciaPersonal2 = new Referencia();
+            $referenciaPersonal2->nombre_referencia_personal = $validatedData['nombre_referencia_personal_2'];
+            $referenciaPersonal2->direccion_referencia_personal = $validatedData['direccion_referencia_personal_2'];
+            $referenciaPersonal2->telefono_referencia_personal = $validatedData['telefono_referencia_personal_2'];
+            $referenciaPersonal2->id_prestador = $prestador->id_prestador;
+            $referenciaPersonal2->save();
+
             DB::commit();
             exit();
         } catch (\Throwable $th) {
