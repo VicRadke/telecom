@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Modalidad;
 use App\Models\Prestador;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class EmpleadoController extends Controller
         {
             return view('empleado.index')
                 ->with([
-                    'empleados' => Prestador::paginate(5)
+                    'empleados' => Prestador::paginate(5),
                 ]);
 
         }

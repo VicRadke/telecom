@@ -306,11 +306,9 @@
                 <div class="select-box">
                     <select name='modalidad'>
                         <option hidden="">Modalidad</option>
-                        <option>Estadia Profesional</option>
-                        <option>Prácticas Laborales</option>
-                        <option>Prácticas Profesionales</option>
-                        <option>Residencias</option>
-                        <option>Servicio Social</option>
+                        @foreach ($modalidades as $modalidad)
+                            <option value="{{$modalidad->id}}">{{$modalidad->name}}</option>    
+                        @endforeach
                     </select>
                     @error('modalidad')
                     <br>

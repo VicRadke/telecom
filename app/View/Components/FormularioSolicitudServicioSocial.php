@@ -2,12 +2,15 @@
 
 namespace App\View\Components;
 
+use App\Models\Modalidad;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class FormularioSolicitudServicioSocial extends Component
 {
+
+    public $modalidades = [];
     /**
      * Create a new component instance.
      * TODO: especifica de modalidades no debe de ser obligatorio
@@ -17,7 +20,7 @@ class FormularioSolicitudServicioSocial extends Component
      */
     public function __construct()
     {
-        //
+        $this->modalidades = Modalidad::all();
     }
 
     /**
