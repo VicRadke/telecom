@@ -304,13 +304,13 @@
             <label>MODALIDAD</label>
             <div class="column">
                 <div class="select-box">
-                    <select name='modalidad'>
-                        <option hidden="">Modalidad</option>
+                    <select name='id_modalidad' required>
+                        <option value="">Modalidad</option>
                         @foreach ($modalidades as $modalidad)
                             <option value="{{$modalidad->id}}">{{$modalidad->name}}</option>    
                         @endforeach
                     </select>
-                    @error('modalidad')
+                    @error('id_modalidad')
                     <br>
                     <small>*{{ $message }}</small>
                     </br>

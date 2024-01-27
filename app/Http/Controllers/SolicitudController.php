@@ -40,7 +40,7 @@ class SolicitudController extends Controller {
             'entidad_federativa' => 'required',
             'alcaldia_municipio' => 'required',
             // modalidades
-            'modalidad' => 'required',
+            'id_modalidad' => 'required',
             'turno' => 'required',
             'es_migrante' => 'required',
             //'especifica_migrante' => 'optional',
@@ -87,6 +87,9 @@ class SolicitudController extends Controller {
             $validatedData['id_prestador'] = $prestador->id_prestador;
             $domicilio = new Domicilio($validatedData);
             $domicilio->save();
+            $solicitud = new Solicitud($validatedData);
+            $solicitud['id_prestador'] = $prestador->id_prestador;
+            $solicitud->save();
             DB::commit();
             exit();
         } catch (\Throwable $th) {
