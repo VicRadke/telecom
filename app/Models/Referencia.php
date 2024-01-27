@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Referencia extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'id_referencia';
 }

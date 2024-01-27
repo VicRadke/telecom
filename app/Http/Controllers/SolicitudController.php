@@ -4,11 +4,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Domicilio;
+use App\Models\InformacionAcademicaPrestador;
 use App\Models\Parentesco;
 use App\Models\Prestador;
 use App\Models\Referencia;
 use App\Models\Solicitud;
-
+use Illuminate\Console\View\Components\Info;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -32,7 +33,7 @@ class SolicitudController extends Controller {
             'rfc' => 'required',
             'lugar_nacimiento' => 'required',
             'nacionalidad' => 'required',
-            'matricula' => 'required|numeric',
+            'matricula' => 'required|numeric|unique:prestadores,matricula',
             // domicilio
             'calle' => 'required',
             'numero_exterior' => 'required',
@@ -57,16 +58,19 @@ class SolicitudController extends Controller {
             // datos familiares
             'nombre_padre' => 'required',
             'domicilio_padre' => 'required',
+            'telefono_padre' => 'required',
             'nombre_madre' => 'required',
             'domicilio_madre' => 'required',
+            'telefono_madre' => 'required',
             'nombre_conyuge' => 'required',
             'domicilio_conyugue' => 'required',
+            'telefono_conyuge' => 'required',
             // contacto de emergencia
             'nombre_contacto_emergencia' => 'required',
-            //'telefono_celular_contacto_emergencia' => 'optional',
-            //'telefono_otro_contacto_emergencia' => 'optional',
+            'telefono_celular_contacto_emergencia' => 'nullable',
+            'telefono_contacto_emergencia' => 'nullable',
             // informacion academica
-            'nivel_academico' => 'required',
+            'id_nivel_academico' => 'required',
             'nombre_institucion' => 'required',
             'carrera' => 'required',
             'periodo_escolar' => 'required',
@@ -108,7 +112,7 @@ class SolicitudController extends Controller {
             $referenciaMadre->save();
             $referenciaConyuge = new Referencia();
             $referenciaConyuge->nombre_referencia_personal = $validatedData['nombre_conyuge'];
-            $referenciaConyuge->direccion_referencia_personal = $validatedData['domicilio_conyuge'];
+            $referenciaConyuge->direccion_referencia_personal = $validatedData['domicilio_conyugue'];
             $referenciaConyuge->telefono_referencia_personal = $validatedData['telefono_conyuge'];
             $referenciaConyuge->id_parentesco = Parentesco::CONYUGE;
             $referenciaConyuge->id_prestador = $prestador->id_prestador;
@@ -127,13 +131,15 @@ class SolicitudController extends Controller {
             $referenciaPersonal2->save();
             $contactoEmergencia = new Referencia();
             $contactoEmergencia->nombre_referencia_personal = $validatedData['nombre_contacto_emergencia'];
-            $contactoEmergencia->telefono_referencia_personal = $validatedData['telefono_celular_contacto_emergencia'];
-            $contactoEmergencia->telefono_otro_referencia_personal = $validatedData['telefono_otro_contacto_emergencia'];
+            $contactoEmergencia->telefono_referencia_personal = $validatedData['telefono_contacto_emergencia'];
+            // $contactoEmergencia->telefono_otro_referencia_personal = $validatedData['telefono_celular_contacto_emergencia'];
             $contactoEmergencia->id_parentesco = Parentesco::CONTACTO_EMERGENCIA;
             $contactoEmergencia->id_prestador = $prestador->id_prestador;
             $contactoEmergencia->save();
+            $informacionAcademica = new InformacionAcademicaPrestador($validatedData);
+            $informacionAcademica->id_prestador = $prestador->id_prestador;
+            $informacionAcademica->save();
             DB::commit();
-            exit();
         } catch (\Throwable $th) {
             DB::rollback();
             throw $th;

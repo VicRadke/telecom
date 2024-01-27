@@ -577,14 +577,13 @@
             <label>NIVEL ACADÉMICO</label>
             <div class="column">
                 <div class="select-box">
-                    <select name='nivel_academico'>
-                        <option hidden="">Nivel</option>
-                        <option>Bachillerato</option>
-                        <option>Técnico</option>
-                        <option>T.S.U</option>
-                        <option>Licenciatura</option>
+                    <select name='id_nivel_academico' required>
+                        <option value="">Nivel</option>
+                        @foreach ($nivelesAcademicos as $nivel)
+                            <option value="{{$nivel->id}}">{{$nivel->name}}</option>
+                        @endforeach
                     </select>
-                    @error('nivel_academico')
+                    @error('id_nivel_academico')
                     <br>
                     <small>*{{ $message }}</small>
                     </br>
