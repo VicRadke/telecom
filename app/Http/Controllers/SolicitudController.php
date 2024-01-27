@@ -3,11 +3,12 @@
 //use App\Models\Solicitud;
 namespace App\Http\Controllers;
 
+use App\Models\Domicilio;
 use App\Models\Prestador;
 use App\Models\Solicitud;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class SolicitudController extends Controller {
     public function index() {
@@ -22,7 +23,6 @@ class SolicitudController extends Controller {
             'apellido_paterno' => 'required',
             'apellido_materno' => 'required',
             'tipo_identificacion' => 'required',
-            'matricula' => 'required|numeric',
             'fecha_nacimiento' => 'required',
             'genero' => 'required',
             'estado_civil' => 'required',
@@ -30,6 +30,7 @@ class SolicitudController extends Controller {
             'rfc' => 'required',
             'lugar_nacimiento' => 'required',
             'nacionalidad' => 'required',
+            'matricula' => 'required|numeric',
             // domicilio
             'calle' => 'required',
             'numero_exterior' => 'required',
@@ -75,11 +76,24 @@ class SolicitudController extends Controller {
             'direccion_referencia_personal_2' => 'required',
             'telefono_referencia_personal_2' => 'required',
         ]);
-        // cambiamos fecha_nacimiento a fecha_nacimineto
-        $validatedData['fecha_nacimineto'] = $validatedData['fecha_nacimiento'];
+
+        DB::beginTransaction();
+        try {
+            // cambiamos fecha_nacimiento a fecha_nacimineto
+            $validatedData['fecha_nacimineto'] = $validatedData['fecha_nacimiento'];
+            
+            $prestador = new Prestador($validatedData);
+            $prestador->save();
+            $validatedData['id_prestador'] = $prestador->id_prestador;
+            $domicilio = new Domicilio($validatedData);
+            $domicilio->save();
+            DB::commit();
+            exit();
+        } catch (\Throwable $th) {
+            DB::rollback();
+            throw $th;
+        }
         
-        $prestador = new Prestador($validatedData);
-        $prestador->save();
         // TODO: Subir todo el form y en el dit tambien lo editado 
         // TODO: Avisar en el front si fue exitoso o no.
         return redirect()->route('dashboard.index')->with('success', 'Solicitud creada exitosamente');

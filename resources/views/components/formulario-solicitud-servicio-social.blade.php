@@ -102,15 +102,6 @@
                 </br>
                 @enderror
             </div>
-            <div class="input-box">
-                <label>Edad</label>
-                <input required placeholder="edad" type="telephone" name='edad'  onkeypress="return numeros(event)" value="{{ old('edad') }}">
-                @error('edad')
-                <br>
-                <small>*{{ $message }}</small>
-                </br>
-            @enderror
-            </div>
         </div>
 
         <div class="input-box address">
