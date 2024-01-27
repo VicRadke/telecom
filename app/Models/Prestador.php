@@ -25,6 +25,9 @@ class Prestador extends Model
         'lugar_nacimiento',
         'nacionalidad',
         'matricula',
+        'telefono',
+        'celular',
+        'correo',
         // // modalidades //
         // 'modalidad',
         // 'turno',
