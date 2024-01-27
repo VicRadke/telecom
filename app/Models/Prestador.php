@@ -24,6 +24,24 @@ class Prestador extends Model
         'rfc',
         'lugar_nacimiento',
         'nacionalidad',
+        'matricula',
+        // domicilio //
+        'calle',
+        'numero_exterior' ,
+        'numero_interior',
+        'colonia',
+        'codigo_postal' ,
+        'entidad_federativa' ,
+        'alcaldia_municipio' ,
+        // modalidades //
+        'modalidad',
+        'turno',
+        'es_migrante',
+        'es_afrodescendiente',
+        'es_lengua_indigena',
+        'telefono',
+        'celular',
+        'correo',
     ];
 
     public function getFullNameAttribute()

@@ -22,7 +22,7 @@ class SolicitudController extends Controller {
             'apellido_paterno' => 'required',
             'apellido_materno' => 'required',
             'tipo_identificacion' => 'required',
-            'id_prestador' => 'required|numeric',
+            'matricula' => 'required|numeric',
             'fecha_nacimiento' => 'required',
             'genero' => 'required',
             'estado_civil' => 'required',

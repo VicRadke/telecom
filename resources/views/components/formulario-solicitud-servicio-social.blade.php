@@ -83,8 +83,8 @@
                         <option value="controls">Control</option>
                     </select>
                 </div>
-                <input required placeholder="Número de identificador" type="text" oninput="convertirAMayusculas(this)" name='id_prestador' value="{{ old('id_prestador') }}">
-                @error('id_prestador')
+                <input required placeholder="Número de identificador" type="text" oninput="convertirAMayusculas(this)" name='matricula' value="{{ old('matricula') }}">
+                @error('matricula')
                 <br>
                 <small>*{{ $message }}</small>
                 </br>

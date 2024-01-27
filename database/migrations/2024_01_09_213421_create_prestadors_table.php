@@ -25,6 +25,23 @@ return new class extends Migration
             $table->string('rfc');
             $table->string('lugar_nacimiento');
             $table->string('nacionalidad');
+            //domicilio 
+            $table->string('calle',);
+            $table->string('numero_exterior');
+            $table->string('numero_interior');
+            $table->string('colonia');
+            $table->string('codigo_postal');
+            $table->string('entidad_federativa');
+            $table->string('alcaldia_municipio');
+            //modalidad
+            $table->string('modalidad');
+            $table->string('turno');
+            $table->string('es_migrante');
+            $table->string('es_afrodescendiente');
+            $table->string('es_lengua_indigena');
+            $table->string('telefono');
+            $table->string('celular');
+            $table->string('correo');
         });
     }
 
