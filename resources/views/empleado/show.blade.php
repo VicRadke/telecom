@@ -31,6 +31,182 @@
             </tr>
         </tbody>
     </table>
+
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Calle</th>
+                <th>Numero Exterior</th>
+                <th>Número Interior</th>
+                <th>Colonia</th>
+                <th>Código Postal</th>
+                <th>Entidad Federativa</th>
+                <th>Alcaldía/Municipio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ $empleado->calle }}</td>
+                <td>{{ $empleado->numero_exterior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+                <td>{{ $empleado->colonia}}</td>
+                <td>{{ $empleado->codigo_postal}}</td>
+                <td>{{ $empleado->entidad_federativa}}</td>
+                <td>{{ $empleado->alcaldia_municipio}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Modalidad</th>
+                <th>Migrante</th>
+                <th>Afrodescendencia</th>
+                <th>Lengua indigena</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ $empleado->calle }}</td>
+                <td>{{ $empleado->numero_exterior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+                <td>{{ $empleado->colonia}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Telefono Fijo</th>
+                <th>Telefono Celular</th>
+                <th>Correo Electrónico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ $empleado->calle }}</td>
+                <td>{{ $empleado->numero_exterior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Nombre del padre</th>
+                <th>Domicilio</th>
+                <th>Telefono</th>
+                <th>Nombre de la madre</th>
+                <th>Domicilio</th>
+                <th>Telefono</th>
+                <th>Conyuge</th>
+                <th>Domicilio</th>
+                <th>Telefono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ $empleado->calle }}</td>
+                <td>{{ $empleado->numero_exterior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+                <td>{{ $empleado->colonia}}</td>
+                <td>{{ $empleado->codigo_postal}}</td>
+                <td>{{ $empleado->entidad_federativa}}</td>
+                <td>{{ $empleado->alcaldia_municipio}}</td>
+                <td>{{ $empleado->entidad_federativa}}</td>
+                <td>{{ $empleado->alcaldia_municipio}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Modalidad</th>
+                <th>Migrante</th>
+                <th>Afrodescendencia</th>
+                <th>Lengua indigena</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ $empleado->calle }}</td>
+                <td>{{ $empleado->numero_exterior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+                <td>{{ $empleado->colonia}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Nombre contacto emergencia</th>
+                <th>Telefono fijo emergencia</th>
+                <th>Telefono movil emergencia</th>
+                <th>Telefono oficina o extension emergencia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ $empleado->calle }}</td>
+                <td>{{ $empleado->numero_exterior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Nivel academico</th>
+                <th>Institucion</th>
+                <th>Carrera</th>
+                <th>Periodo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ $empleado->calle }}</td>
+                <td>{{ $empleado->numero_exterior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Nombre Referencia 1</th>
+                <th>Direccion referencia 1</th>
+                <th>Telefono referencia 1</th>
+                <th>Nombre Referencia 2</th>
+                <th>Direccion referencia 2</th>
+                <th>Telefono referencia 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ $empleado->calle }}</td>
+                <td>{{ $empleado->numero_exterior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+                <td>{{ $empleado->numero_interior}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+    
     <form action="{{ route('empleado.destroy', $empleado) }}" method="POST">
         @csrf
         @method('delete')
