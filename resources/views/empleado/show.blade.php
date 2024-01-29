@@ -47,13 +47,13 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $empleado->calle }}</td>
-                <td>{{ $empleado->numero_exterior}}</td>
-                <td>{{ $empleado->numero_interior}}</td>
-                <td>{{ $empleado->colonia}}</td>
-                <td>{{ $empleado->codigo_postal}}</td>
-                <td>{{ $empleado->entidad_federativa}}</td>
-                <td>{{ $empleado->alcaldia_municipio}}</td>
+                <td>{{ $domicilio->calle }}</td>
+                <td>{{ $domicilio->numero_exterior}}</td>
+                <td>{{ $domicilio->numero_interior}}</td>
+                <td>{{ $domicilio->colonia}}</td>
+                <td>{{ $domicilio->codigo_postal}}</td>
+                <td>{{ $domicilio->entidad_federativa}}</td>
+                <td>{{ $domicilio->alcaldia_municipio}}</td>
             </tr>
         </tbody>
     </table>
@@ -62,17 +62,17 @@
         <thead>
             <tr>
                 <th>Modalidad</th>
-                <th>Migrante</th>
-                <th>Afrodescendencia</th>
-                <th>Lengua indigena</th>
+                {{-- <th>Migrante</th>
+                <th>Afrodescendencia</th> --}}
+                {{-- <th>Lengua indigena</th> --}}
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>{{ $empleado->calle }}</td>
-                <td>{{ $empleado->numero_exterior}}</td>
+                <td>{{ $solicitud->modalidad->name }}</td>
+                {{-- <td>{{ $empleado->numero_exterior}}</td>
                 <td>{{ $empleado->numero_interior}}</td>
-                <td>{{ $empleado->colonia}}</td>
+                <td>{{ $empleado->colonia}}</td> --}}
             </tr>
         </tbody>
     </table>
@@ -87,9 +87,9 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $empleado->calle }}</td>
-                <td>{{ $empleado->numero_exterior}}</td>
-                <td>{{ $empleado->numero_interior}}</td>
+                <td>{{ $empleado->telefono }}</td>
+                <td>{{ $empleado->celular}}</td>
+                <td>{{ $empleado->correo}}</td>
 
             </tr>
         </tbody>

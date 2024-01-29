@@ -51,9 +51,16 @@ class EmpleadoController extends Controller
      */
      public function show(Prestador $empleado)
     {
+        $empleado->load(['domicilio', 'referencias', 'solicitud', 'solicitud.modalidad']);
+        $domicilio = $empleado->domicilio;
+        $referencias = $empleado->referencias;
+        $solicitud = $empleado->solicitud;
+
         return view('empleado.show')->with([
-            'empleado' =>  $empleado
-            'domicilio' =>  $domicilio
+            'empleado' =>  $empleado,
+            'domicilio' =>  $domicilio,
+            'referencias' =>  $referencias,
+            'solicitud' =>  $solicitud,
         ]);
     }
 

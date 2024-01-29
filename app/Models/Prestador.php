@@ -48,4 +48,26 @@ class Prestador extends Model
     {
         return date('d/m/Y', strtotime($this->fecha_nacimineto));
     }
+
+    public function domicilios()
+    {
+        return $this->hasMany(Domicilio::class, 'id_prestador', 'id_prestador');
+    }
+
+    public function domicilio()
+    {
+        return $this->hasOne(Domicilio::class, 'id_prestador', 'id_prestador')->latestOfMany();
+    }
+
+    public function referencias(){
+        return $this->hasMany(Referencia::class, 'id_prestador', 'id_prestador');
+    }
+
+    public function solicitudes(){
+        return $this->hasMany(Solicitud::class, 'id_prestador', 'id_prestador');
+    }
+    public function solicitud(){
+        return $this->hasOne(Solicitud::class, 'id_prestador', 'id_prestador')->latestOfMany();
+    }
+
 }

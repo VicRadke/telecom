@@ -14,4 +14,9 @@ class Solicitud extends Model
         'id_modalidad',
         'id_prestador',
     ];
+
+    public function modalidad()
+    {
+        return $this->belongsTo(Modalidad::class, 'id_modalidad', 'id');
+    }
 }
