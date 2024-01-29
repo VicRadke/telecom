@@ -53,6 +53,7 @@ class EmpleadoController extends Controller
     {
         return view('empleado.show')->with([
             'empleado' =>  $empleado
+            'domicilio' =>  $domicilio
         ]);
     }
 
