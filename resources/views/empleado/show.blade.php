@@ -47,13 +47,13 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $domicilio->calle }}</td>
-                <td>{{ $domicilio->numero_exterior}}</td>
-                <td>{{ $domicilio->numero_interior}}</td>
-                <td>{{ $domicilio->colonia}}</td>
-                <td>{{ $domicilio->codigo_postal}}</td>
-                <td>{{ $domicilio->entidad_federativa}}</td>
-                <td>{{ $domicilio->alcaldia_municipio}}</td>
+                <td>{{ $domicilio->calle ?? 'NA' }}</td>
+                <td>{{ $domicilio->numero_exterior ?? ''}}</td>
+                <td>{{ $domicilio->numero_interior ?? ''}}</td>
+                <td>{{ $domicilio->colonia ?? ''}}</td>
+                <td>{{ $domicilio->codigo_postal ?? ''}}</td>
+                <td>{{ $domicilio->entidad_federativa ?? ''}}</td>
+                <td>{{ $domicilio->alcaldia_municipio ?? ''}}</td>
             </tr>
         </tbody>
     </table>
@@ -69,7 +69,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $solicitud->modalidad->name }}</td>
+                <td>{{ $solicitud->modalidad->name ?? 'NA' }}</td>
                 {{-- <td>{{ $empleado->numero_exterior}}</td>
                 <td>{{ $empleado->numero_interior}}</td>
                 <td>{{ $empleado->colonia}}</td> --}}
