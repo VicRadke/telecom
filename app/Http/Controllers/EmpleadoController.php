@@ -49,18 +49,31 @@ class EmpleadoController extends Controller
     /**
      * Display the specified resource.
      */
-     public function show(Prestador $empleado)
+    public function show(Prestador $empleado)
     {
-        $empleado->load(['domicilio', 'referencias', 'solicitud', 'solicitud.modalidad']);
+        $empleado->load(['domicilio', 'referencias', 'solicitud', 'solicitud.modalidad', 'informacionAcademica.nivelAcademico']);
         $domicilio = $empleado->domicilio;
         $referencias = $empleado->referencias;
         $solicitud = $empleado->solicitud;
+        $datosPadre = $empleado->datosPadre();
+        $datosMadre = $empleado->datosMadre();
+        $datosConyuge = $empleado->datosConyuge();
+        $datosContactoEmergencia = $empleado->datosContactoEmergencia();
+        $informacionAcademica = $empleado->informacionAcademica;
+        $referenciasExtra = $empleado->datosReferenciasExtra();
+
 
         return view('empleado.show')->with([
             'empleado' =>  $empleado,
             'domicilio' =>  $domicilio,
             'referencias' =>  $referencias,
             'solicitud' =>  $solicitud,
+            'datosPadre' =>  $datosPadre,
+            'datosMadre' =>  $datosMadre,
+            'datosConyuge' =>  $datosConyuge,
+            'datosContactoEmergencia' =>  $datosContactoEmergencia,
+            'informacionAcademica' =>  $informacionAcademica,
+            'referenciasExtra' =>  $referenciasExtra,
         ]);
     }
 

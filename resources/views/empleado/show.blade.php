@@ -111,20 +111,19 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $empleado->calle }}</td>
-                <td>{{ $empleado->numero_exterior}}</td>
-                <td>{{ $empleado->numero_interior}}</td>
-                <td>{{ $empleado->colonia}}</td>
-                <td>{{ $empleado->codigo_postal}}</td>
-                <td>{{ $empleado->entidad_federativa}}</td>
-                <td>{{ $empleado->alcaldia_municipio}}</td>
-                <td>{{ $empleado->entidad_federativa}}</td>
-                <td>{{ $empleado->alcaldia_municipio}}</td>
+                <td>{{ $datosPadre->nombre_referencia_personal ?? 'NA' }}</td>
+                <td>{{ $datosPadre->direccion_referencia_personal ?? 'NA'}}</td>
+                <td>{{ $datosPadre->telefono_referencia_personal ?? 'NA'}}</td>
+                <td>{{ $datosMadre->nombre_referencia_personal ?? 'NA'}}</td>
+                <td>{{ $datosMadre->direccion_referencia_personal ?? 'NA'}}</td>
+                <td>{{ $datosMadre->telefono_referencia_personal ?? 'NA'}}</td>
+                <td>{{ $datosConyuge->nombre_referencia_personal ?? 'NA'}}</td>
+                <td>{{ $datosConyuge->direccion_referencia_personal ?? 'NA'}}</td>
+                <td>{{ $datosConyuge->telefono_referencia_personal ?? 'NA'}}</td>
             </tr>
         </tbody>
     </table>
-
-    <table class="styled-table">
+    {{-- <table class="styled-table">
         <thead>
             <tr>
                 <th>Modalidad</th>
@@ -141,7 +140,7 @@
                 <td>{{ $empleado->colonia}}</td>
             </tr>
         </tbody>
-    </table>
+    </table> --}}
 
     <table class="styled-table">
         <thead>
@@ -154,11 +153,10 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $empleado->calle }}</td>
-                <td>{{ $empleado->numero_exterior}}</td>
-                <td>{{ $empleado->numero_interior}}</td>
-                <td>{{ $empleado->numero_interior}}</td>
-
+                <td>{{ $datosConyuge->nombre_referencia_personal ?? 'NA'}}</td>
+                <td>{{ $datosContactoEmergencia->nombre_referencia_personal ?? 'NA' }}</td>
+                <td>{{ $datosContactoEmergencia->direccion_referencia_personal ?? 'NA'}}</td>
+                <td>{{ $datosContactoEmergencia->telefono_referencia_personal ?? 'NA'}}</td>
             </tr>
         </tbody>
     </table>
@@ -174,11 +172,10 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $empleado->calle }}</td>
-                <td>{{ $empleado->numero_exterior}}</td>
-                <td>{{ $empleado->numero_interior}}</td>
-                <td>{{ $empleado->numero_interior}}</td>
-
+                <td>{{ $informacionAcademica->nivelAcademico->name ?? 'NA' }}</td>
+                <td>{{ $informacionAcademica->nombre_institucion ?? 'NA'}}</td>
+                <td>{{ $informacionAcademica->carrera ?? 'NA'}}</td>
+                <td>{{ $informacionAcademica->periodo_escolar ?? 'NA'}}</td>
             </tr>
         </tbody>
     </table>
@@ -186,23 +183,20 @@
     <table class="styled-table">
         <thead>
             <tr>
-                <th>Nombre Referencia 1</th>
-                <th>Direccion referencia 1</th>
-                <th>Telefono referencia 1</th>
-                <th>Nombre Referencia 2</th>
-                <th>Direccion referencia 2</th>
-                <th>Telefono referencia 2</th>
+                @foreach ($referenciasExtra as $referenciaExtra)
+                    <th>Nombre Referencia {{ $loop->iteration }}</th>
+                    <th>Direccion referencia {{ $loop->iteration }}</th>
+                    <th>Telefono referencia {{ $loop->iteration }}</th>
+                @endforeach
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>{{ $empleado->calle }}</td>
-                <td>{{ $empleado->numero_exterior}}</td>
-                <td>{{ $empleado->numero_interior}}</td>
-                <td>{{ $empleado->numero_interior}}</td>
-                <td>{{ $empleado->numero_interior}}</td>
-                <td>{{ $empleado->numero_interior}}</td>
-
+                @foreach ($referenciasExtra as $referenciaExtra)
+                    <td>{{ $referenciaExtra->nombre_referencia_personal ?? 'NA'}}</td>
+                    <td>{{ $referenciaExtra->direccion_referencia_personal ?? 'NA'}}</td>
+                    <td>{{ $referenciaExtra->telefono_referencia_personal ?? 'NA'}}</td>
+                @endforeach
             </tr>
         </tbody>
     </table>

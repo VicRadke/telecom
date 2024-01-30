@@ -70,4 +70,31 @@ class Prestador extends Model
         return $this->hasOne(Solicitud::class, 'id_prestador', 'id_prestador')->latestOfMany();
     }
 
+    public function informacionesAcademicas(){
+        return $this->hasMany(InformacionAcademicaPrestador::class, 'id_prestador', 'id_prestador');
+    }
+
+    public function informacionAcademica(){
+        return $this->hasOne(InformacionAcademicaPrestador::class, 'id_prestador', 'id_prestador')->latestOfMany();
+    }
+
+    public function datosPadre(){
+        return $this->referencias()->where('id_parentesco', Parentesco::PADRE)->first();
+    }
+
+    public function datosMadre(){
+        return $this->referencias()->where('id_parentesco', Parentesco::MADRE)->first();
+    }
+
+    public function datosConyuge(){
+        return $this->referencias()->where('id_parentesco', Parentesco::CONYUGE)->first();
+    }
+
+    public function datosContactoEmergencia(){
+        return $this->referencias()->where('id_parentesco', Parentesco::CONTACTO_EMERGENCIA)->first();
+    }
+
+    public function datosReferenciasExtra(){
+        return $this->referencias()->whereNull('id_parentesco')->get();
+    }
 }

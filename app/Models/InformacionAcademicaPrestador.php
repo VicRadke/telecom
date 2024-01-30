@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class InformacionAcademicaPrestador extends Model
 {
     use HasFactory;
+
+    protected $table = 'informacion_academica_prestadors';
     protected $fillable = [
         'id_prestador',
         'id_nivel_academico',
@@ -15,4 +17,9 @@ class InformacionAcademicaPrestador extends Model
         'carrera',
         'periodo_escolar',
     ];
+
+    public function nivelAcademico()
+    {
+        return $this->belongsTo(NivelAcademico::class, 'id_nivel_academico');
+    }
 }
